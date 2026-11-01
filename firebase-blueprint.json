@@ -1,0 +1,158 @@
+{
+  "entities": {
+    "UserProfile": {
+      "title": "UserProfile",
+      "description": "User profile with fitness stats, preferences, and gamification level.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string", "maxLength": 80 },
+        "age": { "type": "number" },
+        "heightCm": { "type": "number" },
+        "weightKg": { "type": "number" },
+        "gender": { "type": "string", "enum": ["male", "female", "other"] },
+        "fitnessGoal": { "type": "string", "enum": ["build_muscle", "lose_fat", "maintain", "strength", "general_fitness"] },
+        "experienceLevel": { "type": "string", "enum": ["beginner", "intermediate", "advanced"] },
+        "workoutLocation": { "type": "string", "enum": ["home", "gym"] },
+        "equipment": { "type": "string", "enum": ["none", "resistance_bands", "dumbbells", "other"] },
+        "workoutDurationMinutes": { "type": "number" },
+        "dietaryPreference": { "type": "string", "enum": ["vegetarian", "vegan", "eggetarian", "non_vegetarian"] },
+        "activityLevel": { "type": "string", "enum": ["sedentary", "light", "moderate", "active", "very_active"] },
+        "allergies": { "type": "string", "maxLength": 200 },
+        "limitations": { "type": "string", "maxLength": 200 },
+        "xp": { "type": "number" },
+        "level": { "type": "number" },
+        "streakDays": { "type": "number" },
+        "lastActiveDate": { "type": "string" },
+        "createdAt": { "type": "string" },
+        "updatedAt": { "type": "string" }
+      },
+      "required": ["id", "name"]
+    },
+    "MoodCheckIn": {
+      "title": "MoodCheckIn",
+      "description": "Daily mood check-in and corresponding recommended action.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "userId": { "type": "string" },
+        "mood": { "type": "string", "enum": ["energetic", "happy", "normal", "tired", "stressed", "low_motivation"] },
+        "note": { "type": "string", "maxLength": 300 },
+        "workoutRecommendedId": { "type": "string" },
+        "isRestDay": { "type": "boolean" },
+        "date": { "type": "string" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["id", "userId", "mood", "date"]
+    },
+    "WorkoutLog": {
+      "title": "WorkoutLog",
+      "description": "Completed workout session record with duration and XP earned.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "userId": { "type": "string" },
+        "planId": { "type": "string" },
+        "planTitle": { "type": "string", "maxLength": 100 },
+        "durationMinutes": { "type": "number" },
+        "completedExercisesCount": { "type": "number" },
+        "xpEarned": { "type": "number" },
+        "date": { "type": "string" },
+        "completedAt": { "type": "string" }
+      },
+      "required": ["id", "userId", "planId", "planTitle", "durationMinutes"]
+    },
+    "FoodLog": {
+      "title": "FoodLog",
+      "description": "Daily logged food entry with portion, calories, and protein.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "userId": { "type": "string" },
+        "mealType": { "type": "string", "enum": ["breakfast", "lunch", "dinner", "snack"] },
+        "foodName": { "type": "string", "maxLength": 100 },
+        "portion": { "type": "string", "maxLength": 60 },
+        "calories": { "type": "number" },
+        "proteinGrams": { "type": "number" },
+        "date": { "type": "string" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["id", "userId", "mealType", "foodName", "calories", "proteinGrams", "date"]
+    },
+    "BodyMeasurement": {
+      "title": "BodyMeasurement",
+      "description": "Periodic weight and optional waist measurements.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "userId": { "type": "string" },
+        "weightKg": { "type": "number" },
+        "waistCm": { "type": "number" },
+        "date": { "type": "string" },
+        "note": { "type": "string", "maxLength": 200 },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["id", "userId", "weightKg", "date"]
+    },
+    "LeaderboardItem": {
+      "title": "LeaderboardItem",
+      "description": "Public social leaderboard ranking displaying user XP and level.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "userId": { "type": "string" },
+        "name": { "type": "string", "maxLength": 80 },
+        "xp": { "type": "number" },
+        "level": { "type": "number" },
+        "streakDays": { "type": "number" },
+        "plantStageEmoji": { "type": "string" },
+        "plantStageName": { "type": "string" },
+        "lastActive": { "type": "string" }
+      },
+      "required": ["id", "userId", "name", "xp", "level"]
+    },
+    "ChatMessage": {
+      "title": "ChatMessage",
+      "description": "FitMood AI Coach conversation message.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "userId": { "type": "string" },
+        "role": { "type": "string", "enum": ["user", "model"] },
+        "text": { "type": "string" },
+        "timestamp": { "type": "string" }
+      },
+      "required": ["id", "userId", "role", "text"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": { "$ref": "#/entities/UserProfile" },
+      "description": "User profile, gamification stats, and personal fitness configuration."
+    },
+    "/users/{userId}/mood_checkins/{checkInId}": {
+      "schema": { "$ref": "#/entities/MoodCheckIn" },
+      "description": "Daily mood check-ins recorded by the user."
+    },
+    "/users/{userId}/workout_logs/{logId}": {
+      "schema": { "$ref": "#/entities/WorkoutLog" },
+      "description": "Completed workout records for progress and calendar view."
+    },
+    "/users/{userId}/food_logs/{logId}": {
+      "schema": { "$ref": "#/entities/FoodLog" },
+      "description": "Meals logged by the user for daily calorie and protein tracking."
+    },
+    "/users/{userId}/measurements/{measurementId}": {
+      "schema": { "$ref": "#/entities/BodyMeasurement" },
+      "description": "Weight and body measurements tracked over time."
+    },
+    "/users/{userId}/chat_messages/{messageId}": {
+      "schema": { "$ref": "#/entities/ChatMessage" },
+      "description": "Messages exchanged between the user and FitMood AI Coach."
+    },
+    "/leaderboard/{userId}": {
+      "schema": { "$ref": "#/entities/LeaderboardItem" },
+      "description": "Social leaderboard records for community motivation and rankings."
+    }
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "name": "FitMood",
+  "description": "Build your body. Boost your mood. No gym. No expensive equipment.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

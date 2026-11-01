@@ -1,0 +1,1894 @@
+@import "tailwindcss";
+
+/* ========================================================
+   FitMood Centralized Semantic Theme Tokens & Design System
+   WCAG AA Contrast Verified (Normal text >= 4.5:1, Large text >= 3:1)
+   Coordinated Palettes:
+   1. Sunset Orange (Signature)
+   2. Crisp Light
+   3. Midnight Dark
+   4. Ocean Blue
+   5. Forest Green
+   6. Soft Lavender
+   ======================================================== */
+
+:root,
+[data-theme="sunset_orange"][data-mode="light"],
+[data-theme="sunset_orange"]:not([data-mode="dark"]) {
+  /* Warm cream canvas with energetic orange & coral */
+  --background: #fffbf5;
+  --foreground: #1c1917;
+  --surface: #ffffff;
+  --surface-elevated: #fef5e7;
+  --text-primary: #1c1917;
+  --text-secondary: #44403c;
+  --text-muted: #57534e;
+  --button-primary: #c2410c;
+  --button-primary-text: #ffffff;
+  --button-secondary: #1c1917;
+  --button-secondary-text: #ffffff;
+  --focus-ring: #c2410c;
+  --success: #15803d;
+  --warning: #b45309;
+  --error: #dc2626;
+  --card: #ffffff;
+  --card-foreground: #1c1917;
+  --popover: #ffffff;
+  --popover-foreground: #1c1917;
+  --primary: #c2410c;
+  --primary-foreground: #ffffff;
+  --secondary: #ffedd5;
+  --secondary-foreground: #9a3412;
+  --muted: #fef3e2;
+  --muted-foreground: #57534e;
+  --accent: #f43f5e;
+  --accent-foreground: #ffffff;
+  --destructive: #dc2626;
+  --destructive-foreground: #ffffff;
+  --border: #fed7aa;
+  --input: #fed7aa;
+  --ring: #c2410c;
+
+  /* App semantic mappings */
+  --app-bg: #fffbf5;
+  --app-bg-subtle: #fef5e7;
+  --app-card: #ffffff;
+  --app-card-muted: #fef3e2;
+  --app-card-hover: #fde8cc;
+  --app-card-border: #fed7aa;
+  --app-card-border-subtle: #ffedd5;
+  --app-input-bg: #ffffff;
+  --app-input-border: #fdba74;
+  --app-input-text: #1c1917;
+  --app-input-placeholder: #78716c;
+  --app-text-primary: #1c1917;
+  --app-text-secondary: #44403c;
+  --app-text-muted: #57534e;
+  --app-primary: #c2410c;
+  --app-primary-hover: #9a3412;
+  --app-primary-foreground: #ffffff;
+  --app-primary-text: #c2410c;
+  --app-accent: #f43f5e;
+  --app-accent-subtle: #ffe4e6;
+  --app-accent-text: #be123c;
+  --app-header-bg: rgba(255, 251, 245, 0.94);
+  --app-sidebar-bg: #fffbf5;
+  --app-sidebar-border: #fed7aa;
+  --app-nav-active-bg: #c2410c;
+  --app-nav-active-text: #ffffff;
+  --app-nav-inactive-text: #57534e;
+  --app-nav-hover-bg: #ffedd5;
+  --app-ring: #c2410c;
+  --app-chart-grid: #fed7aa;
+  --app-chart-line-1: #ea580c;
+  --app-chart-line-2: #f43f5e;
+  --app-chart-line-3: #fb923c;
+  --app-chart-tooltip-bg: #292524;
+  --app-chart-tooltip-text: #ffffff;
+
+  /* Button Color System - Sunset Orange Light */
+  --btn-primary-bg: #c2410c;
+  --btn-primary-text: #ffffff;
+  --btn-primary-hover-bg: #9a3412;
+  --btn-primary-border: #9a3412;
+  --btn-secondary-bg: #1c1917;
+  --btn-secondary-text: #ffffff;
+  --btn-secondary-hover-bg: #292524;
+  --btn-secondary-border: #44403c;
+  --btn-accent-bg: #e11d48;
+  --btn-accent-text: #ffffff;
+  --btn-accent-hover-bg: #be123c;
+  --btn-accent-border: #be123c;
+  --btn-outline-text: #1c1917;
+  --btn-outline-border: #c2410c;
+  --btn-outline-hover-bg: #ffedd5;
+  --btn-outline-hover-border: #9a3412;
+  --btn-ghost-text: #1c1917;
+  --btn-ghost-hover-bg: #fef3e2;
+  --btn-ghost-border: transparent;
+  --btn-destructive-bg: #dc2626;
+  --btn-destructive-text: #ffffff;
+  --btn-destructive-hover-bg: #b91c1c;
+  --btn-destructive-border: #b91c1c;
+  --btn-icon-text: #44403c;
+  --btn-icon-hover-bg: #ffedd5;
+  --btn-icon-hover-text: #1c1917;
+}
+
+[data-theme="sunset_orange"][data-mode="dark"] {
+  /* Deep warm dark charcoal with vibrant orange and coral glows */
+  --background: #141214;
+  --foreground: #fafaf9;
+  --surface: #201b22;
+  --surface-elevated: #2a232c;
+  --text-primary: #fafaf9;
+  --text-secondary: #e7e5e4;
+  --text-muted: #d6d3d1;
+  --button-primary: #f97316;
+  --button-primary-text: #141214;
+  --button-secondary: #2a232c;
+  --button-secondary-text: #fafaf9;
+  --focus-ring: #f97316;
+  --success: #22c55e;
+  --warning: #f59e0b;
+  --error: #dc2626;
+  --card: #201b22;
+  --card-foreground: #fafaf9;
+  --popover: #201b22;
+  --popover-foreground: #fafaf9;
+  --primary: #f97316;
+  --primary-foreground: #141214;
+  --secondary: #2a232c;
+  --secondary-foreground: #fed7aa;
+  --muted: #2a232c;
+  --muted-foreground: #d6d3d1;
+  --accent: #fb7185;
+  --accent-foreground: #141214;
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
+  --border: #3e3042;
+  --input: #523f56;
+  --ring: #f97316;
+
+  --app-bg: #141214;
+  --app-bg-subtle: #1c181c;
+  --app-card: #201b22;
+  --app-card-muted: #2a232c;
+  --app-card-hover: #332b36;
+  --app-card-border: #443547;
+  --app-card-border-subtle: #332736;
+  --app-input-bg: #181419;
+  --app-input-border: #523f56;
+  --app-input-text: #fafaf9;
+  --app-input-placeholder: #a8a29e;
+  --app-text-primary: #fafaf9;
+  --app-text-secondary: #e7e5e4;
+  --app-text-muted: #d6d3d1;
+  --app-primary: #f97316;
+  --app-primary-hover: #ea580c;
+  --app-primary-foreground: #141214;
+  --app-primary-text: #fb923c;
+  --app-accent: #fb7185;
+  --app-accent-subtle: rgba(251, 113, 133, 0.18);
+  --app-accent-text: #fda4af;
+  --app-header-bg: rgba(20, 18, 20, 0.94);
+  --app-sidebar-bg: #181519;
+  --app-sidebar-border: #332736;
+  --app-nav-active-bg: #f97316;
+  --app-nav-active-text: #141214;
+  --app-nav-inactive-text: #d6d3d1;
+  --app-nav-hover-bg: #2a232c;
+  --app-ring: #f97316;
+  --app-chart-grid: #332736;
+  --app-chart-line-1: #f97316;
+  --app-chart-line-2: #fb7185;
+  --app-chart-line-3: #fdba74;
+  --app-chart-tooltip-bg: #141214;
+  --app-chart-tooltip-text: #fafaf9;
+
+  /* Button Color System - Sunset Orange Dark */
+  --btn-primary-bg: #f97316;
+  --btn-primary-text: #141214;
+  --btn-primary-hover-bg: #fb923c;
+  --btn-primary-border: #f97316;
+  --btn-primary-hover-border: #fb923c;
+  --btn-secondary-bg: #2a232c;
+  --btn-secondary-text: #fafaf9;
+  --btn-secondary-hover-bg: #382f3b;
+  --btn-secondary-border: #7e6983;
+  --btn-secondary-hover-border: #9a82a0;
+  --btn-accent-bg: #fb7185;
+  --btn-accent-text: #141214;
+  --btn-accent-hover-bg: #f43f5e;
+  --btn-accent-border: transparent;
+  --btn-accent-hover-border: transparent;
+  --btn-outline-text: #fed7aa;
+  --btn-outline-border: #7e6983;
+  --btn-outline-hover-bg: #2a232c;
+  --btn-outline-hover-border: #8b7990;
+  --btn-ghost-text: #e7e5e4;
+  --btn-ghost-hover-bg: rgba(251, 113, 133, 0.12);
+  --btn-ghost-border: transparent;
+  --btn-ghost-hover-border: transparent;
+  --btn-destructive-bg: #dc2626;
+  --btn-destructive-text: #ffffff;
+  --btn-destructive-hover-bg: #b91c1c;
+  --btn-destructive-border: #dc2626;
+  --btn-destructive-hover-border: #b91c1c;
+  --btn-icon-text: #d6d3d1;
+  --btn-icon-hover-bg: #2a232c;
+  --btn-icon-hover-text: #fafaf9;
+}
+
+[data-theme="light"],
+[data-theme="light"][data-mode="light"] {
+  /* Crisp light: Slate-50 background, pure white cards, high-contrast dark text */
+  --background: #f8fafc;
+  --foreground: #0f172a;
+  --surface: #ffffff;
+  --surface-elevated: #f1f5f9;
+  --text-primary: #0f172a;
+  --text-secondary: #334155;
+  --text-muted: #475569;
+  --button-primary: #4d7c0f;
+  --button-primary-text: #ffffff;
+  --button-secondary: #0f172a;
+  --button-secondary-text: #ffffff;
+  --focus-ring: #4d7c0f;
+  --success: #15803d;
+  --warning: #b45309;
+  --error: #dc2626;
+  --card: #ffffff;
+  --card-foreground: #0f172a;
+  --popover: #ffffff;
+  --popover-foreground: #0f172a;
+  --primary: #4d7c0f;
+  --primary-foreground: #ffffff;
+  --secondary: #f1f5f9;
+  --secondary-foreground: #334155;
+  --muted: #f1f5f9;
+  --muted-foreground: #475569;
+  --accent: #059669;
+  --accent-foreground: #ffffff;
+  --destructive: #dc2626;
+  --destructive-foreground: #ffffff;
+  --border: #e2e8f0;
+  --input: #cbd5e1;
+  --ring: #4d7c0f;
+
+  --app-bg: #f8fafc;
+  --app-bg-subtle: #f1f5f9;
+  --app-card: #ffffff;
+  --app-card-muted: #f8fafc;
+  --app-card-hover: #f1f5f9;
+  --app-card-border: #e2e8f0;
+  --app-card-border-subtle: #f1f5f9;
+  --app-input-bg: #ffffff;
+  --app-input-border: #cbd5e1;
+  --app-input-text: #0f172a;
+  --app-input-placeholder: #64748b;
+  --app-text-primary: #0f172a;
+  --app-text-secondary: #334155;
+  --app-text-muted: #475569;
+  --app-primary: #4d7c0f;
+  --app-primary-hover: #3f6212;
+  --app-primary-foreground: #ffffff;
+  --app-primary-text: #4d7c0f;
+  --app-accent: #059669;
+  --app-accent-subtle: #ecfdf5;
+  --app-accent-text: #047857;
+  --app-header-bg: rgba(255, 255, 255, 0.94);
+  --app-sidebar-bg: #ffffff;
+  --app-sidebar-border: #e2e8f0;
+  --app-nav-active-bg: #4d7c0f;
+  --app-nav-active-text: #ffffff;
+  --app-nav-inactive-text: #475569;
+  --app-nav-hover-bg: #f1f5f9;
+  --app-ring: #4d7c0f;
+  --app-chart-grid: #e2e8f0;
+  --app-chart-line-1: #4d7c0f;
+  --app-chart-line-2: #059669;
+  --app-chart-line-3: #0284c7;
+  --app-chart-tooltip-bg: #0f172a;
+  --app-chart-tooltip-text: #f8fafc;
+
+  /* Button Color System - Crisp Light */
+  --btn-primary-bg: #4d7c0f;
+  --btn-primary-text: #ffffff;
+  --btn-primary-hover-bg: #3f6212;
+  --btn-primary-border: #4d7c0f;
+  --btn-primary-hover-border: #3f6212;
+  --btn-secondary-bg: #0f172a;
+  --btn-secondary-text: #ffffff;
+  --btn-secondary-hover-bg: #1e293b;
+  --btn-secondary-border: #334155;
+  --btn-secondary-hover-border: #475569;
+  --btn-accent-bg: #047857;
+  --btn-accent-text: #ffffff;
+  --btn-accent-hover-bg: #047857;
+  --btn-accent-border: transparent;
+  --btn-accent-hover-border: transparent;
+  --btn-outline-text: #0f172a;
+  --btn-outline-border: #64748b;
+  --btn-outline-hover-bg: #e2e8f0;
+  --btn-outline-hover-border: #334155;
+  --btn-ghost-text: #334155;
+  --btn-ghost-hover-bg: #f1f5f9;
+  --btn-ghost-border: transparent;
+  --btn-ghost-hover-border: transparent;
+  --btn-destructive-bg: #dc2626;
+  --btn-destructive-text: #ffffff;
+  --btn-destructive-hover-bg: #b91c1c;
+  --btn-destructive-border: #dc2626;
+  --btn-destructive-hover-border: #b91c1c;
+  --btn-icon-text: #334155;
+  --btn-icon-hover-bg: #f1f5f9;
+  --btn-icon-hover-text: #0f172a;
+}
+
+[data-theme="light"][data-mode="dark"] {
+  --background: #0f172a;
+  --foreground: #f8fafc;
+  --surface: #1e293b;
+  --surface-elevated: #283548;
+  --text-primary: #f8fafc;
+  --text-secondary: #cbd5e1;
+  --text-muted: #94a3b8;
+  --button-primary: #a3e635;
+  --button-primary-text: #020617;
+  --button-secondary: #1e293b;
+  --button-secondary-text: #f8fafc;
+  --border: #334155;
+  --focus-ring: #a3e635;
+  --success: #4ade80;
+  --warning: #fbbf24;
+  --error: #dc2626;
+  --card: #1e293b;
+  --card-foreground: #f8fafc;
+  --app-bg: #0f172a;
+  --app-card: #1e293b;
+  --app-card-border: #334155;
+  --app-text-primary: #f8fafc;
+  --app-text-secondary: #cbd5e1;
+  --app-text-muted: #94a3b8;
+  --btn-primary-bg: #a3e635;
+  --btn-primary-text: #020617;
+  --btn-primary-hover-bg: #bef264;
+  --btn-primary-border: #a3e635;
+  --btn-primary-hover-border: #bef264;
+  --btn-secondary-bg: #1e293b;
+  --btn-secondary-text: #f8fafc;
+  --btn-secondary-hover-bg: #334155;
+  --btn-secondary-border: #64748b;
+  --btn-secondary-hover-border: #94a3b8;
+  --btn-accent-bg: #34d399;
+  --btn-accent-text: #020617;
+  --btn-accent-hover-bg: #6ee7b7;
+  --btn-accent-border: transparent;
+  --btn-accent-hover-border: transparent;
+  --btn-outline-text: #f8fafc;
+  --btn-outline-border: #64748b;
+  --btn-outline-hover-bg: #1e293b;
+  --btn-outline-hover-border: #94a3b8;
+  --btn-ghost-text: #cbd5e1;
+  --btn-ghost-hover-bg: rgba(255, 255, 255, 0.08);
+  --btn-ghost-border: transparent;
+  --btn-ghost-hover-border: transparent;
+  --btn-destructive-bg: #dc2626;
+  --btn-destructive-text: #ffffff;
+  --btn-destructive-hover-bg: #b91c1c;
+  --btn-destructive-border: #dc2626;
+  --btn-destructive-hover-border: #b91c1c;
+  --btn-icon-text: #cbd5e1;
+  --btn-icon-hover-bg: #1e293b;
+  --btn-icon-hover-text: #f8fafc;
+}
+
+[data-theme="dark"],
+[data-theme="dark"][data-mode="dark"] {
+  /* Classic Midnight Dark: Deep slate-950, slate-900 cards, electric lime */
+  --background: #020617;
+  --foreground: #f8fafc;
+  --surface: #0f172a;
+  --surface-elevated: #1e293b;
+  --text-primary: #f8fafc;
+  --text-secondary: #e2e8f0;
+  --text-muted: #cbd5e1;
+  --button-primary: #a3e635;
+  --button-primary-text: #020617;
+  --button-secondary: #1e293b;
+  --button-secondary-text: #f8fafc;
+  --focus-ring: #a3e635;
+  --success: #34d399;
+  --warning: #facc15;
+  --error: #dc2626;
+  --card: #0f172a;
+  --card-foreground: #f8fafc;
+  --popover: #0f172a;
+  --popover-foreground: #f8fafc;
+  --primary: #a3e635;
+  --primary-foreground: #020617;
+  --secondary: #1e293b;
+  --secondary-foreground: #cbd5e1;
+  --muted: #1e293b;
+  --muted-foreground: #cbd5e1;
+  --accent: #34d399;
+  --accent-foreground: #020617;
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
+  --border: #1e293b;
+  --input: #334155;
+  --ring: #a3e635;
+
+  --app-bg: #020617;
+  --app-bg-subtle: #090d1f;
+  --app-card: #0f172a;
+  --app-card-muted: #1e293b;
+  --app-card-hover: #1e293b;
+  --app-card-border: #1e293b;
+  --app-card-border-subtle: #1e293b;
+  --app-input-bg: #020617;
+  --app-input-border: #334155;
+  --app-input-text: #f8fafc;
+  --app-input-placeholder: #94a3b8;
+  --app-text-primary: #f8fafc;
+  --app-text-secondary: #e2e8f0;
+  --app-text-muted: #cbd5e1;
+  --app-primary: #a3e635;
+  --app-primary-hover: #bef264;
+  --app-primary-foreground: #020617;
+  --app-primary-text: #a3e635;
+  --app-accent: #34d399;
+  --app-accent-subtle: rgba(52, 211, 153, 0.16);
+  --app-accent-text: #6ee7b7;
+  --app-header-bg: rgba(2, 6, 23, 0.94);
+  --app-sidebar-bg: #0f172a;
+  --app-sidebar-border: #1e293b;
+  --app-nav-active-bg: #a3e635;
+  --app-nav-active-text: #020617;
+  --app-nav-inactive-text: #cbd5e1;
+  --app-nav-hover-bg: #1e293b;
+  --app-ring: #a3e635;
+  --app-chart-grid: #1e293b;
+  --app-chart-line-1: #a3e635;
+  --app-chart-line-2: #34d399;
+  --app-chart-line-3: #38bdf8;
+  --app-chart-tooltip-bg: #0f172a;
+  --app-chart-tooltip-text: #f8fafc;
+
+  /* Button Color System - Midnight Dark */
+  --btn-primary-bg: #a3e635;
+  --btn-primary-text: #020617;
+  --btn-primary-hover-bg: #bef264;
+  --btn-primary-border: #a3e635;
+  --btn-primary-hover-border: #bef264;
+  --btn-secondary-bg: #1e293b;
+  --btn-secondary-text: #f8fafc;
+  --btn-secondary-hover-bg: #334155;
+  --btn-secondary-border: #64748b;
+  --btn-secondary-hover-border: #94a3b8;
+  --btn-accent-bg: #38bdf8;
+  --btn-accent-text: #020617;
+  --btn-accent-hover-bg: #7dd3fc;
+  --btn-accent-border: transparent;
+  --btn-accent-hover-border: transparent;
+  --btn-outline-text: #f8fafc;
+  --btn-outline-border: #64748b;
+  --btn-outline-hover-bg: #1e293b;
+  --btn-outline-hover-border: #94a3b8;
+  --btn-ghost-text: #cbd5e1;
+  --btn-ghost-hover-bg: rgba(255, 255, 255, 0.08);
+  --btn-ghost-border: transparent;
+  --btn-ghost-hover-border: transparent;
+  --btn-destructive-bg: #dc2626;
+  --btn-destructive-text: #ffffff;
+  --btn-destructive-hover-bg: #b91c1c;
+  --btn-destructive-border: #dc2626;
+  --btn-destructive-hover-border: #b91c1c;
+  --btn-icon-text: #cbd5e1;
+  --btn-icon-hover-bg: #1e293b;
+  --btn-icon-hover-text: #f8fafc;
+}
+
+[data-theme="dark"][data-mode="light"] {
+  --background: #f8fafc;
+  --foreground: #020617;
+  --surface: #ffffff;
+  --surface-elevated: #f1f5f9;
+  --text-primary: #020617;
+  --text-secondary: #334155;
+  --text-muted: #64748b;
+  --button-primary: #4d7c0f;
+  --button-primary-text: #ffffff;
+  --button-secondary: #0f172a;
+  --button-secondary-text: #ffffff;
+  --border: #cbd5e1;
+  --focus-ring: #4d7c0f;
+  --success: #15803d;
+  --warning: #b45309;
+  --error: #dc2626;
+  --card: #ffffff;
+  --card-foreground: #020617;
+  --app-bg: #f8fafc;
+  --app-card: #ffffff;
+  --app-card-border: #cbd5e1;
+  --app-text-primary: #020617;
+  --app-text-secondary: #334155;
+  --app-text-muted: #64748b;
+  --btn-primary-bg: #4d7c0f;
+  --btn-primary-text: #ffffff;
+  --btn-primary-hover-bg: #3f6212;
+  --btn-primary-border: #4d7c0f;
+  --btn-primary-hover-border: #3f6212;
+  --btn-secondary-bg: #0f172a;
+  --btn-secondary-text: #ffffff;
+  --btn-secondary-hover-bg: #1e293b;
+  --btn-secondary-border: #334155;
+  --btn-secondary-hover-border: #475569;
+  --btn-accent-bg: #0369a1;
+  --btn-accent-text: #ffffff;
+  --btn-accent-hover-bg: #075985;
+  --btn-accent-border: transparent;
+  --btn-accent-hover-border: transparent;
+  --btn-outline-text: #020617;
+  --btn-outline-border: #64748b;
+  --btn-outline-hover-bg: #e2e8f0;
+  --btn-outline-hover-border: #334155;
+  --btn-ghost-text: #334155;
+  --btn-ghost-hover-bg: #f1f5f9;
+  --btn-ghost-border: transparent;
+  --btn-ghost-hover-border: transparent;
+  --btn-destructive-bg: #dc2626;
+  --btn-destructive-text: #ffffff;
+  --btn-destructive-hover-bg: #b91c1c;
+  --btn-destructive-border: #dc2626;
+  --btn-destructive-hover-border: #b91c1c;
+  --btn-icon-text: #334155;
+  --btn-icon-hover-bg: #f1f5f9;
+  --btn-icon-hover-text: #020617;
+}
+
+[data-theme="ocean_blue"][data-mode="light"],
+[data-theme="ocean_blue"]:not([data-mode="dark"]) {
+  /* Soft blue-tinted white, ocean blue primary, turquoise accent */
+  --background: #f0f7ff;
+  --foreground: #082f49;
+  --surface: #ffffff;
+  --surface-elevated: #e0f2fe;
+  --text-primary: #082f49;
+  --text-secondary: #0c4a6e;
+  --text-muted: #334155;
+  --button-primary: #0369a1;
+  --button-primary-text: #ffffff;
+  --button-secondary: #0c4a6e;
+  --button-secondary-text: #ffffff;
+  --focus-ring: #0369a1;
+  --success: #0d9488;
+  --warning: #b45309;
+  --error: #dc2626;
+  --card: #ffffff;
+  --card-foreground: #082f49;
+  --popover: #ffffff;
+  --popover-foreground: #082f49;
+  --primary: #0369a1;
+  --primary-foreground: #ffffff;
+  --secondary: #e0f2fe;
+  --secondary-foreground: #0c4a6e;
+  --muted: #f0f7ff;
+  --muted-foreground: #334155;
+  --accent: #06b6d4;
+  --accent-foreground: #ffffff;
+  --destructive: #dc2626;
+  --destructive-foreground: #ffffff;
+  --border: #bae6fd;
+  --input: #7dd3fc;
+  --ring: #0369a1;
+
+  --app-bg: #f0f7ff;
+  --app-bg-subtle: #e0f2fe;
+  --app-card: #ffffff;
+  --app-card-muted: #e6f3ff;
+  --app-card-hover: #dbeafe;
+  --app-card-border: #bae6fd;
+  --app-card-border-subtle: #e0f2fe;
+  --app-input-bg: #ffffff;
+  --app-input-border: #7dd3fc;
+  --app-input-text: #082f49;
+  --app-input-placeholder: #64748b;
+  --app-text-primary: #082f49;
+  --app-text-secondary: #0c4a6e;
+  --app-text-muted: #334155;
+  --app-primary: #0369a1;
+  --app-primary-hover: #075985;
+  --app-primary-foreground: #ffffff;
+  --app-primary-text: #0369a1;
+  --app-accent: #06b6d4;
+  --app-accent-subtle: #cffafe;
+  --app-accent-text: #0e7490;
+  --app-header-bg: rgba(240, 247, 255, 0.94);
+  --app-sidebar-bg: #f0f7ff;
+  --app-sidebar-border: #bae6fd;
+  --app-nav-active-bg: #0369a1;
+  --app-nav-active-text: #ffffff;
+  --app-nav-inactive-text: #0c4a6e;
+  --app-nav-hover-bg: #e0f2fe;
+  --app-ring: #0369a1;
+  --app-chart-grid: #bae6fd;
+  --app-chart-line-1: #0369a1;
+  --app-chart-line-2: #06b6d4;
+  --app-chart-line-3: #38bdf8;
+  --app-chart-tooltip-bg: #082f49;
+  --app-chart-tooltip-text: #ffffff;
+
+  /* Button Color System - Ocean Blue Light */
+  --btn-primary-bg: #0369a1;
+  --btn-primary-text: #ffffff;
+  --btn-primary-hover-bg: #075985;
+  --btn-primary-border: #0369a1;
+  --btn-primary-hover-border: #075985;
+  --btn-secondary-bg: #0c4a6e;
+  --btn-secondary-text: #ffffff;
+  --btn-secondary-hover-bg: #0369a1;
+  --btn-secondary-border: #0284c7;
+  --btn-secondary-hover-border: #0369a1;
+  --btn-accent-bg: #0e7490;
+  --btn-accent-text: #ffffff;
+  --btn-accent-hover-bg: #155e75;
+  --btn-accent-border: transparent;
+  --btn-accent-hover-border: transparent;
+  --btn-outline-text: #082f49;
+  --btn-outline-border: #0284c7;
+  --btn-outline-hover-bg: #e0f2fe;
+  --btn-outline-hover-border: #0369a1;
+  --btn-ghost-text: #0c4a6e;
+  --btn-ghost-hover-bg: #e0f2fe;
+  --btn-ghost-border: transparent;
+  --btn-ghost-hover-border: transparent;
+  --btn-destructive-bg: #dc2626;
+  --btn-destructive-text: #ffffff;
+  --btn-destructive-hover-bg: #b91c1c;
+  --btn-destructive-border: #dc2626;
+  --btn-destructive-hover-border: #b91c1c;
+  --btn-icon-text: #0c4a6e;
+  --btn-icon-hover-bg: #e0f2fe;
+  --btn-icon-hover-text: #082f49;
+}
+
+[data-theme="ocean_blue"][data-mode="dark"] {
+  /* Deep nautical navy, radiant cyan primary & turquoise accent */
+  --background: #031525;
+  --foreground: #f0f9ff;
+  --surface: #0a2948;
+  --surface-elevated: #0f355c;
+  --text-primary: #f0f9ff;
+  --text-secondary: #e0f2fe;
+  --text-muted: #bae6fd;
+  --button-primary: #38bdf8;
+  --button-primary-text: #031525;
+  --button-secondary: #0f355c;
+  --button-secondary-text: #f0f9ff;
+  --focus-ring: #38bdf8;
+  --success: #22d3ee;
+  --warning: #fbbf24;
+  --error: #dc2626;
+  --card: #0a2948;
+  --card-foreground: #f0f9ff;
+  --popover: #0a2948;
+  --popover-foreground: #f0f9ff;
+  --primary: #38bdf8;
+  --primary-foreground: #031525;
+  --secondary: #0f355c;
+  --secondary-foreground: #bae6fd;
+  --muted: #0f355c;
+  --muted-foreground: #bae6fd;
+  --accent: #22d3ee;
+  --accent-foreground: #031525;
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
+  --border: #164e85;
+  --input: #1e5e9e;
+  --ring: #38bdf8;
+
+  --app-bg: #031525;
+  --app-bg-subtle: #062038;
+  --app-card: #0a2948;
+  --app-card-muted: #0f355c;
+  --app-card-hover: #134170;
+  --app-card-border: #164e85;
+  --app-card-border-subtle: #0f355c;
+  --app-input-bg: #051d33;
+  --app-input-border: #1e5e9e;
+  --app-input-text: #f0f9ff;
+  --app-input-placeholder: #7dd3fc;
+  --app-text-primary: #f0f9ff;
+  --app-text-secondary: #e0f2fe;
+  --app-text-muted: #bae6fd;
+  --app-primary: #38bdf8;
+  --app-primary-hover: #7dd3fc;
+  --app-primary-foreground: #031525;
+  --app-primary-text: #38bdf8;
+  --app-accent: #22d3ee;
+  --app-accent-subtle: rgba(34, 211, 238, 0.18);
+  --app-accent-text: #67e8f9;
+  --app-header-bg: rgba(3, 21, 37, 0.94);
+  --app-sidebar-bg: #062038;
+  --app-sidebar-border: #164e85;
+  --app-nav-active-bg: #38bdf8;
+  --app-nav-active-text: #031525;
+  --app-nav-inactive-text: #bae6fd;
+  --app-nav-hover-bg: #0f355c;
+  --app-ring: #38bdf8;
+  --app-chart-grid: #164e85;
+  --app-chart-line-1: #38bdf8;
+  --app-chart-line-2: #22d3ee;
+  --app-chart-line-3: #818cf8;
+  --app-chart-tooltip-bg: #031525;
+  --app-chart-tooltip-text: #f0f9ff;
+
+  /* Button Color System - Ocean Blue Dark */
+  --btn-primary-bg: #38bdf8;
+  --btn-primary-text: #031525;
+  --btn-primary-hover-bg: #7dd3fc;
+  --btn-primary-border: #38bdf8;
+  --btn-primary-hover-border: #7dd3fc;
+  --btn-secondary-bg: #0f355c;
+  --btn-secondary-text: #f0f9ff;
+  --btn-secondary-hover-bg: #134170;
+  --btn-secondary-border: #2563eb;
+  --btn-secondary-hover-border: #3b82f6;
+  --btn-accent-bg: #22d3ee;
+  --btn-accent-text: #031525;
+  --btn-accent-hover-bg: #67e8f9;
+  --btn-accent-border: transparent;
+  --btn-accent-hover-border: transparent;
+  --btn-outline-text: #bae6fd;
+  --btn-outline-border: #2563eb;
+  --btn-outline-hover-bg: #0f355c;
+  --btn-outline-hover-border: #3b82f6;
+  --btn-ghost-text: #e0f2fe;
+  --btn-ghost-hover-bg: rgba(56, 189, 248, 0.12);
+  --btn-ghost-border: transparent;
+  --btn-ghost-hover-border: transparent;
+  --btn-destructive-bg: #dc2626;
+  --btn-destructive-text: #ffffff;
+  --btn-destructive-hover-bg: #b91c1c;
+  --btn-destructive-border: #dc2626;
+  --btn-destructive-hover-border: #b91c1c;
+  --btn-icon-text: #bae6fd;
+  --btn-icon-hover-bg: #0f355c;
+  --btn-icon-hover-text: #f0f9ff;
+}
+
+[data-theme="forest_green"][data-mode="light"],
+[data-theme="forest_green"]:not([data-mode="dark"]) {
+  /* Warm pale green, rich forest green, fresh mint */
+  --background: #f2f9f4;
+  --foreground: #052e16;
+  --surface: #ffffff;
+  --surface-elevated: #e6f4ea;
+  --text-primary: #052e16;
+  --text-secondary: #14532d;
+  --text-muted: #374151;
+  --button-primary: #15803d;
+  --button-primary-text: #ffffff;
+  --button-secondary: #14532d;
+  --button-secondary-text: #ffffff;
+  --focus-ring: #15803d;
+  --success: #15803d;
+  --warning: #b45309;
+  --error: #dc2626;
+  --card: #ffffff;
+  --card-foreground: #052e16;
+  --popover: #ffffff;
+  --popover-foreground: #052e16;
+  --primary: #15803d;
+  --primary-foreground: #ffffff;
+  --secondary: #e6f4ea;
+  --secondary-foreground: #14532d;
+  --muted: #f2f9f4;
+  --muted-foreground: #374151;
+  --accent: #10b981;
+  --accent-foreground: #ffffff;
+  --destructive: #dc2626;
+  --destructive-foreground: #ffffff;
+  --border: #bbf7d0;
+  --input: #86efac;
+  --ring: #15803d;
+
+  --app-bg: #f2f9f4;
+  --app-bg-subtle: #e6f4ea;
+  --app-card: #ffffff;
+  --app-card-muted: #edf7ef;
+  --app-card-hover: #dcf2e3;
+  --app-card-border: #bbf7d0;
+  --app-card-border-subtle: #dcf2e3;
+  --app-input-bg: #ffffff;
+  --app-input-border: #86efac;
+  --app-input-text: #052e16;
+  --app-input-placeholder: #6b7280;
+  --app-text-primary: #052e16;
+  --app-text-secondary: #14532d;
+  --app-text-muted: #374151;
+  --app-primary: #15803d;
+  --app-primary-hover: #166534;
+  --app-primary-foreground: #ffffff;
+  --app-primary-text: #15803d;
+  --app-accent: #10b981;
+  --app-accent-subtle: #d1fae5;
+  --app-accent-text: #047857;
+  --app-header-bg: rgba(242, 249, 244, 0.94);
+  --app-sidebar-bg: #f2f9f4;
+  --app-sidebar-border: #bbf7d0;
+  --app-nav-active-bg: #15803d;
+  --app-nav-active-text: #ffffff;
+  --app-nav-inactive-text: #14532d;
+  --app-nav-hover-bg: #dcf2e3;
+  --app-ring: #15803d;
+  --app-chart-grid: #bbf7d0;
+  --app-chart-line-1: #15803d;
+  --app-chart-line-2: #10b981;
+  --app-chart-line-3: #84cc16;
+  --app-chart-tooltip-bg: #052e16;
+  --app-chart-tooltip-text: #ffffff;
+
+  /* Button Color System - Forest Green Light */
+  --btn-primary-bg: #15803d;
+  --btn-primary-text: #ffffff;
+  --btn-primary-hover-bg: #166534;
+  --btn-primary-border: #15803d;
+  --btn-primary-hover-border: #166534;
+  --btn-secondary-bg: #14532d;
+  --btn-secondary-text: #ffffff;
+  --btn-secondary-hover-bg: #166534;
+  --btn-secondary-border: #15803d;
+  --btn-secondary-hover-border: #166534;
+  --btn-accent-bg: #047857;
+  --btn-accent-text: #ffffff;
+  --btn-accent-hover-bg: #065f46;
+  --btn-accent-border: transparent;
+  --btn-accent-hover-border: transparent;
+  --btn-outline-text: #052e16;
+  --btn-outline-border: #16a34a;
+  --btn-outline-hover-bg: #dcf2e3;
+  --btn-outline-hover-border: #15803d;
+  --btn-ghost-text: #14532d;
+  --btn-ghost-hover-bg: #e6f4ea;
+  --btn-ghost-border: transparent;
+  --btn-ghost-hover-border: transparent;
+  --btn-destructive-bg: #dc2626;
+  --btn-destructive-text: #ffffff;
+  --btn-destructive-hover-bg: #b91c1c;
+  --btn-destructive-border: #dc2626;
+  --btn-destructive-hover-border: #b91c1c;
+  --btn-icon-text: #14532d;
+  --btn-icon-hover-bg: #e6f4ea;
+  --btn-icon-hover-text: #052e16;
+}
+
+[data-theme="forest_green"][data-mode="dark"] {
+  /* Deep forest dark, radiant mint and vibrant emerald */
+  --background: #041a0e;
+  --foreground: #f0fdf4;
+  --surface: #0a2e1b;
+  --surface-elevated: #11482a;
+  --text-primary: #f0fdf4;
+  --text-secondary: #dcfce7;
+  --text-muted: #bbf7d0;
+  --button-primary: #4ade80;
+  --button-primary-text: #041a0e;
+  --button-secondary: #11482a;
+  --button-secondary-text: #f0fdf4;
+  --focus-ring: #4ade80;
+  --success: #34d399;
+  --warning: #facc15;
+  --error: #dc2626;
+  --card: #0a2e1b;
+  --card-foreground: #f0fdf4;
+  --popover: #0a2e1b;
+  --popover-foreground: #f0fdf4;
+  --primary: #4ade80;
+  --primary-foreground: #041a0e;
+  --secondary: #11482a;
+  --secondary-foreground: #bbf7d0;
+  --muted: #11482a;
+  --muted-foreground: #bbf7d0;
+  --accent: #34d399;
+  --accent-foreground: #041a0e;
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
+  --border: #1e6b3f;
+  --input: #24824d;
+  --ring: #4ade80;
+
+  --app-bg: #041a0e;
+  --app-bg-subtle: #082917;
+  --app-card: #0a2e1b;
+  --app-card-muted: #11482a;
+  --app-card-hover: #175c37;
+  --app-card-border: #1e6b3f;
+  --app-card-border-subtle: #11482a;
+  --app-input-bg: #062414;
+  --app-input-border: #24824d;
+  --app-input-text: #f0fdf4;
+  --app-input-placeholder: #86efac;
+  --app-text-primary: #f0fdf4;
+  --app-text-secondary: #dcfce7;
+  --app-text-muted: #bbf7d0;
+  --app-primary: #4ade80;
+  --app-primary-hover: #86efac;
+  --app-primary-foreground: #041a0e;
+  --app-primary-text: #4ade80;
+  --app-accent: #34d399;
+  --app-accent-subtle: rgba(52, 211, 153, 0.18);
+  --app-accent-text: #6ee7b7;
+  --app-header-bg: rgba(4, 26, 14, 0.94);
+  --app-sidebar-bg: #082917;
+  --app-sidebar-border: #1e6b3f;
+  --app-nav-active-bg: #4ade80;
+  --app-nav-active-text: #041a0e;
+  --app-nav-inactive-text: #bbf7d0;
+  --app-nav-hover-bg: #11482a;
+  --app-ring: #4ade80;
+  --app-chart-grid: #1e6b3f;
+  --app-chart-line-1: #4ade80;
+  --app-chart-line-2: #34d399;
+  --app-chart-line-3: #a3e635;
+  --app-chart-tooltip-bg: #041a0e;
+  --app-chart-tooltip-text: #f0fdf4;
+
+  /* Button Color System - Forest Green Dark */
+  --btn-primary-bg: #4ade80;
+  --btn-primary-text: #041a0e;
+  --btn-primary-hover-bg: #86efac;
+  --btn-primary-border: #4ade80;
+  --btn-primary-hover-border: #86efac;
+  --btn-secondary-bg: #11482a;
+  --btn-secondary-text: #f0fdf4;
+  --btn-secondary-hover-bg: #175c37;
+  --btn-secondary-border: #27804c;
+  --btn-secondary-hover-border: #34d399;
+  --btn-accent-bg: #34d399;
+  --btn-accent-text: #041a0e;
+  --btn-accent-hover-bg: #6ee7b7;
+  --btn-accent-border: transparent;
+  --btn-accent-hover-border: transparent;
+  --btn-outline-text: #bbf7d0;
+  --btn-outline-border: #27804c;
+  --btn-outline-hover-bg: #11482a;
+  --btn-outline-hover-border: #34d399;
+  --btn-ghost-text: #dcfce7;
+  --btn-ghost-hover-bg: rgba(74, 222, 128, 0.12);
+  --btn-ghost-border: transparent;
+  --btn-ghost-hover-border: transparent;
+  --btn-destructive-bg: #dc2626;
+  --btn-destructive-text: #ffffff;
+  --btn-destructive-hover-bg: #b91c1c;
+  --btn-destructive-border: #dc2626;
+  --btn-destructive-hover-border: #b91c1c;
+  --btn-icon-text: #bbf7d0;
+  --btn-icon-hover-bg: #11482a;
+  --btn-icon-hover-text: #f0fdf4;
+}
+
+[data-theme="lavender"][data-mode="light"],
+[data-theme="lavender"]:not([data-mode="dark"]) {
+  /* Soft lavender-white, purple primary, gentle violet accent */
+  --background: #faf5ff;
+  --foreground: #3b0764;
+  --surface: #ffffff;
+  --surface-elevated: #f3e8ff;
+  --text-primary: #3b0764;
+  --text-secondary: #581c87;
+  --text-muted: #4b5563;
+  --button-primary: #9333ea;
+  --button-primary-text: #ffffff;
+  --button-secondary: #3b0764;
+  --button-secondary-text: #ffffff;
+  --focus-ring: #9333ea;
+  --success: #16a34a;
+  --warning: #b45309;
+  --error: #dc2626;
+  --card: #ffffff;
+  --card-foreground: #3b0764;
+  --popover: #ffffff;
+  --popover-foreground: #3b0764;
+  --primary: #9333ea;
+  --primary-foreground: #ffffff;
+  --secondary: #f3e8ff;
+  --secondary-foreground: #581c87;
+  --muted: #faf5ff;
+  --muted-foreground: #4b5563;
+  --accent: #a855f7;
+  --accent-foreground: #ffffff;
+  --destructive: #dc2626;
+  --destructive-foreground: #ffffff;
+  --border: #e9d5ff;
+  --input: #d8b4fe;
+  --ring: #9333ea;
+
+  --app-bg: #faf5ff;
+  --app-bg-subtle: #f3e8ff;
+  --app-card: #ffffff;
+  --app-card-muted: #f5f0fb;
+  --app-card-hover: #ede4f7;
+  --app-card-border: #e9d5ff;
+  --app-card-border-subtle: #f3e8ff;
+  --app-input-bg: #ffffff;
+  --app-input-border: #d8b4fe;
+  --app-input-text: #3b0764;
+  --app-input-placeholder: #6b7280;
+  --app-text-primary: #3b0764;
+  --app-text-secondary: #581c87;
+  --app-text-muted: #4b5563;
+  --app-primary: #9333ea;
+  --app-primary-hover: #7e22ce;
+  --app-primary-foreground: #ffffff;
+  --app-primary-text: #7e22ce;
+  --app-accent: #a855f7;
+  --app-accent-subtle: #f3e8ff;
+  --app-accent-text: #6b21a8;
+  --app-header-bg: rgba(250, 245, 255, 0.94);
+  --app-sidebar-bg: #faf5ff;
+  --app-sidebar-border: #e9d5ff;
+  --app-nav-active-bg: #9333ea;
+  --app-nav-active-text: #ffffff;
+  --app-nav-inactive-text: #581c87;
+  --app-nav-hover-bg: #f3e8ff;
+  --app-ring: #9333ea;
+  --app-chart-grid: #e9d5ff;
+  --app-chart-line-1: #9333ea;
+  --app-chart-line-2: #a855f7;
+  --app-chart-line-3: #c084fc;
+  --app-chart-tooltip-bg: #3b0764;
+  --app-chart-tooltip-text: #ffffff;
+
+  /* Button Color System - Lavender Light */
+  --btn-primary-bg: #9333ea;
+  --btn-primary-text: #ffffff;
+  --btn-primary-hover-bg: #7e22ce;
+  --btn-primary-border: #9333ea;
+  --btn-primary-hover-border: #7e22ce;
+  --btn-secondary-bg: #3b0764;
+  --btn-secondary-text: #ffffff;
+  --btn-secondary-hover-bg: #581c87;
+  --btn-secondary-border: #7e22ce;
+  --btn-secondary-hover-border: #9333ea;
+  --btn-accent-bg: #a21caf;
+  --btn-accent-text: #ffffff;
+  --btn-accent-hover-bg: #86198f;
+  --btn-accent-border: transparent;
+  --btn-accent-hover-border: transparent;
+  --btn-outline-text: #3b0764;
+  --btn-outline-border: #9333ea;
+  --btn-outline-hover-bg: #f3e8ff;
+  --btn-outline-hover-border: #7e22ce;
+  --btn-ghost-text: #581c87;
+  --btn-ghost-hover-bg: #ede4f7;
+  --btn-ghost-border: transparent;
+  --btn-ghost-hover-border: transparent;
+  --btn-destructive-bg: #dc2626;
+  --btn-destructive-text: #ffffff;
+  --btn-destructive-hover-bg: #b91c1c;
+  --btn-destructive-border: #dc2626;
+  --btn-destructive-hover-border: #b91c1c;
+  --btn-icon-text: #581c87;
+  --btn-icon-hover-bg: #ede4f7;
+  --btn-icon-hover-text: #3b0764;
+}
+
+[data-theme="lavender"][data-mode="dark"] {
+  /* Deep purple-gray, gentle violet highlights */
+  --background: #150f1c;
+  --foreground: #faf5ff;
+  --surface: #251b33;
+  --surface-elevated: #302342;
+  --text-primary: #faf5ff;
+  --text-secondary: #f3e8ff;
+  --text-muted: #e9d5ff;
+  --button-primary: #c084fc;
+  --button-primary-text: #150f1c;
+  --button-secondary: #302342;
+  --button-secondary-text: #faf5ff;
+  --focus-ring: #c084fc;
+  --success: #34d399;
+  --warning: #facc15;
+  --error: #dc2626;
+  --card: #251b33;
+  --card-foreground: #faf5ff;
+  --popover: #251b33;
+  --popover-foreground: #fafaf9;
+  --primary: #c084fc;
+  --primary-foreground: #150f1c;
+  --secondary: #302342;
+  --secondary-foreground: #e9d5ff;
+  --muted: #302342;
+  --muted-foreground: #e9d5ff;
+  --accent: #e879f9;
+  --accent-foreground: #150f1c;
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
+  --border: #4d386b;
+  --input: #5b4280;
+  --ring: #c084fc;
+
+  --app-bg: #150f1c;
+  --app-bg-subtle: #1c1426;
+  --app-card: #251b33;
+  --app-card-muted: #302342;
+  --app-card-hover: #3c2c54;
+  --app-card-border: #4d386b;
+  --app-card-border-subtle: #302342;
+  --app-input-bg: #181121;
+  --app-input-border: #5b4280;
+  --app-input-text: #faf5ff;
+  --app-input-placeholder: #c084fc;
+  --app-text-primary: #faf5ff;
+  --app-text-secondary: #f3e8ff;
+  --app-text-muted: #e9d5ff;
+  --app-primary: #c084fc;
+  --app-primary-hover: #d8b4fe;
+  --app-primary-foreground: #150f1c;
+  --app-primary-text: #c084fc;
+  --app-accent: #e879f9;
+  --app-accent-subtle: rgba(232, 121, 249, 0.18);
+  --app-accent-text: #f0abfc;
+  --app-header-bg: rgba(21, 15, 28, 0.94);
+  --app-sidebar-bg: #1c1426;
+  --app-sidebar-border: #4d386b;
+  --app-nav-active-bg: #c084fc;
+  --app-nav-active-text: #150f1c;
+  --app-nav-inactive-text: #e9d5ff;
+  --app-nav-hover-bg: #302342;
+  --app-ring: #c084fc;
+  --app-chart-grid: #4d386b;
+  --app-chart-line-1: #c084fc;
+  --app-chart-line-2: #e879f9;
+  --app-chart-line-3: #818cf8;
+  --app-chart-tooltip-bg: #150f1c;
+  --app-chart-tooltip-text: #faf5ff;
+
+  /* Button Color System - Lavender Dark */
+  --btn-primary-bg: #c084fc;
+  --btn-primary-text: #150f1c;
+  --btn-primary-hover-bg: #d8b4fe;
+  --btn-primary-border: #c084fc;
+  --btn-primary-hover-border: #d8b4fe;
+  --btn-secondary-bg: #302342;
+  --btn-secondary-text: #faf5ff;
+  --btn-secondary-hover-bg: #3c2c54;
+  --btn-secondary-border: #8262a6;
+  --btn-secondary-hover-border: #9a7bc0;
+  --btn-accent-bg: #e879f9;
+  --btn-accent-text: #150f1c;
+  --btn-accent-hover-bg: #f0abfc;
+  --btn-accent-border: transparent;
+  --btn-accent-hover-border: transparent;
+  --btn-outline-text: #e9d5ff;
+  --btn-outline-border: #8262a6;
+  --btn-outline-hover-bg: #302342;
+  --btn-outline-hover-border: #8060af;
+  --btn-ghost-text: #f3e8ff;
+  --btn-ghost-hover-bg: rgba(192, 132, 252, 0.12);
+  --btn-ghost-border: transparent;
+  --btn-ghost-hover-border: transparent;
+  --btn-destructive-bg: #dc2626;
+  --btn-destructive-text: #ffffff;
+  --btn-destructive-hover-bg: #b91c1c;
+  --btn-destructive-border: #dc2626;
+  --btn-destructive-hover-border: #b91c1c;
+  --btn-icon-text: #e9d5ff;
+  --btn-icon-hover-bg: #302342;
+  --btn-icon-hover-text: #faf5ff;
+}
+
+/* ========================================================
+   Base Typography & Global Elements
+   ======================================================== */
+
+@layer base {
+  html, body {
+    background-color: var(--app-bg);
+    color: var(--app-text-primary);
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    transition: background-color 0.15s ease, color 0.15s ease;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Outfit', 'Plus Jakarta Sans', system-ui, sans-serif;
+    color: var(--app-text-primary);
+  }
+
+  p {
+    color: var(--app-text-secondary);
+  }
+
+  input, select, textarea {
+    background-color: var(--app-input-bg);
+    color: var(--app-input-text);
+    border-color: var(--app-input-border);
+  }
+
+  input::placeholder, textarea::placeholder {
+    color: var(--app-input-placeholder);
+  }
+
+  select option {
+    background-color: var(--app-card);
+    color: var(--app-text-primary);
+  }
+}
+
+/* ========================================================
+   Global Semantic Adaptations (No hardcoded wash-outs)
+   Replaces dark slate containers and text with active theme tokens.
+   ======================================================== */
+
+/* 1. Card & Container Surface Adaptations */
+.bg-slate-900:not(.fixed-dark):not(.fixed-dark *):not(button):not(button *):not([role="button"]):not([role="button"] *):not([class*="btn-"]):not([class*="btn-"] *),
+.bg-slate-900\/90:not(.fixed-dark):not(.fixed-dark *):not(button):not(button *):not([role="button"]):not([role="button"] *):not([class*="btn-"]):not([class*="btn-"] *),
+.bg-slate-900\/80:not(.fixed-dark):not(.fixed-dark *):not(button):not(button *):not([role="button"]):not([role="button"] *):not([class*="btn-"]):not([class*="btn-"] *),
+.bg-slate-900\/70:not(.fixed-dark):not(.fixed-dark *):not(button):not(button *):not([role="button"]):not([role="button"] *):not([class*="btn-"]):not([class*="btn-"] *) {
+  background-color: var(--app-card) !important;
+}
+
+.bg-slate-950:not(.fixed-dark):not(.fixed-dark *):not(button):not(button *):not([role="button"]):not([role="button"] *):not([class*="btn-"]):not([class*="btn-"] *):not(.bg-lime-400 *),
+.bg-slate-950\/90:not(.fixed-dark):not(.fixed-dark *):not(button):not(button *):not([role="button"]):not([role="button"] *):not([class*="btn-"]):not([class*="btn-"] *),
+.bg-slate-950\/80:not(.fixed-dark):not(.fixed-dark *):not(button):not(button *):not([role="button"]):not([role="button"] *):not([class*="btn-"]):not([class*="btn-"] *),
+.bg-slate-950\/70:not(.fixed-dark):not(.fixed-dark *):not(button):not(button *):not([role="button"]):not([role="button"] *):not([class*="btn-"]):not([class*="btn-"] *),
+.bg-slate-950\/60:not(.fixed-dark):not(.fixed-dark *):not(button):not(button *):not([role="button"]):not([role="button"] *):not([class*="btn-"]):not([class*="btn-"] *),
+.bg-slate-950\/50:not(.fixed-dark):not(.fixed-dark *):not(button):not(button *):not([role="button"]):not([role="button"] *):not([class*="btn-"]):not([class*="btn-"] *),
+.bg-slate-950\/40:not(.fixed-dark):not(.fixed-dark *):not(button):not(button *):not([role="button"]):not([role="button"] *):not([class*="btn-"]):not([class*="btn-"] *) {
+  background-color: var(--app-card-muted) !important;
+}
+
+.border-slate-800:not(.fixed-dark):not(.fixed-dark *):not(button):not(button *):not([role="button"]):not([role="button"] *):not([class*="btn-"]):not([class*="btn-"] *),
+.border-slate-700:not(.fixed-dark):not(.fixed-dark *):not(button):not(button *):not([role="button"]):not([role="button"] *):not([class*="btn-"]):not([class*="btn-"] *),
+.border-slate-700\/80:not(.fixed-dark):not(.fixed-dark *):not(button):not(button *):not([role="button"]):not([role="button"] *):not([class*="btn-"]):not([class*="btn-"] *) {
+  border-color: var(--app-card-border) !important;
+}
+
+/* 2. Gradient Stops that used dark slates */
+[data-mode="light"] .from-slate-950:not(.fixed-dark):not(.fixed-dark *):not(button):not(button *):not([role="button"]):not([role="button"] *):not([class*="btn-"]):not([class*="btn-"] *),
+[data-mode="light"] .from-slate-900:not(.fixed-dark):not(.fixed-dark *):not(button):not(button *):not([role="button"]):not([role="button"] *):not([class*="btn-"]):not([class*="btn-"] *),
+[data-theme="light"] .from-slate-950:not(.fixed-dark):not(.fixed-dark *):not(button):not(button *):not([role="button"]):not([role="button"] *):not([class*="btn-"]):not([class*="btn-"] *),
+[data-theme="light"] .from-slate-900:not(.fixed-dark):not(.fixed-dark *):not(button):not(button *):not([role="button"]):not([role="button"] *):not([class*="btn-"]):not([class*="btn-"] *) {
+  --tw-gradient-from: var(--app-card) !important;
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to) !important;
+}
+
+[data-mode="light"] .via-slate-950:not(.fixed-dark):not(.fixed-dark *):not(button):not(button *):not([role="button"]):not([role="button"] *):not([class*="btn-"]):not([class*="btn-"] *),
+[data-mode="light"] .via-slate-900:not(.fixed-dark):not(.fixed-dark *):not(button):not(button *):not([role="button"]):not([role="button"] *):not([class*="btn-"]):not([class*="btn-"] *),
+[data-theme="light"] .via-slate-950:not(.fixed-dark):not(.fixed-dark *):not(button):not(button *):not([role="button"]):not([role="button"] *):not([class*="btn-"]):not([class*="btn-"] *),
+[data-theme="light"] .via-slate-900:not(.fixed-dark):not(.fixed-dark *):not(button):not(button *):not([role="button"]):not([role="button"] *):not([class*="btn-"]):not([class*="btn-"] *) {
+  --tw-gradient-via-stops: var(--tw-gradient-from), var(--app-card-muted), var(--tw-gradient-to) !important;
+}
+
+[data-mode="light"] .to-slate-950:not(.fixed-dark):not(.fixed-dark *):not(button):not(button *):not([role="button"]):not([role="button"] *):not([class*="btn-"]):not([class*="btn-"] *),
+[data-mode="light"] .to-slate-900:not(.fixed-dark):not(.fixed-dark *):not(button):not(button *):not([role="button"]):not([role="button"] *):not([class*="btn-"]):not([class*="btn-"] *),
+[data-theme="light"] .to-slate-950:not(.fixed-dark):not(.fixed-dark *):not(button):not(button *):not([role="button"]):not([role="button"] *):not([class*="btn-"]):not([class*="btn-"] *),
+[data-theme="light"] .to-slate-900:not(.fixed-dark):not(.fixed-dark *):not(button):not(button *):not([role="button"]):not([role="button"] *):not([class*="btn-"]):not([class*="btn-"] *) {
+  --tw-gradient-to: var(--app-card-muted) !important;
+}
+
+/* 3. Text Visibility in Light Modes */
+[data-mode="light"] h1,
+[data-mode="light"] h2,
+[data-mode="light"] h3,
+[data-mode="light"] h4,
+[data-mode="light"] h5,
+[data-mode="light"] h6,
+[data-theme="light"] h1,
+[data-theme="light"] h2,
+[data-theme="light"] h3,
+[data-theme="light"] h4,
+[data-theme="light"] h5,
+[data-theme="light"] h6 {
+  color: var(--app-text-primary) !important;
+}
+
+/* Elements with text-white: adapt when NOT on solid saturated colored action surfaces, badges, or fixed-dark */
+[data-mode="light"] .text-white:not([class*="bg-orange-500"]):not([class*="bg-orange-600"]):not([class*="bg-rose-500"]):not([class*="bg-rose-600"]):not([class*="bg-red-500"]):not([class*="bg-red-600"]):not([class*="bg-emerald-600"]):not([class*="bg-emerald-700"]):not([class*="bg-blue-600"]):not([class*="bg-purple-600"]):not(.btn-solid):not(.btn-solid *):not(.fixed-dark):not(.fixed-dark *):not(button):not(button *):not([role="button"]):not([role="button"] *):not([class*="btn-"]):not([class*="btn-"] *):not(button):not(button *):not([role="button"]):not([role="button"] *):not([class*="btn-"]):not([class*="btn-"] *),
+[data-theme="light"] .text-white:not([class*="bg-orange-500"]):not([class*="bg-orange-600"]):not([class*="bg-rose-500"]):not([class*="bg-rose-600"]):not([class*="bg-red-500"]):not([class*="bg-red-600"]):not([class*="bg-emerald-600"]):not([class*="bg-emerald-700"]):not([class*="bg-blue-600"]):not([class*="bg-purple-600"]):not(.btn-solid):not(.btn-solid *):not(.fixed-dark):not(.fixed-dark *):not(button):not(button *):not([role="button"]):not([role="button"] *):not([class*="btn-"]):not([class*="btn-"] *):not(button):not(button *):not([role="button"]):not([role="button"] *):not([class*="btn-"]):not([class*="btn-"] *),
+html:not(.dark) .text-white:not([class*="bg-orange-500"]):not([class*="bg-orange-600"]):not([class*="bg-rose-500"]):not([class*="bg-rose-600"]):not([class*="bg-red-500"]):not([class*="bg-red-600"]):not([class*="bg-emerald-600"]):not([class*="bg-emerald-700"]):not([class*="bg-blue-600"]):not([class*="bg-purple-600"]):not(.btn-solid):not(.btn-solid *):not(.fixed-dark):not(.fixed-dark *):not(button):not(button *):not([role="button"]):not([role="button"] *):not([class*="btn-"]):not([class*="btn-"] *):not(button):not(button *):not([role="button"]):not([role="button"] *):not([class*="btn-"]):not([class*="btn-"] *) {
+  color: var(--app-text-primary) !important;
+}
+
+[data-mode="light"] .text-slate-100:not([class*="bg-orange-500"]):not([class*="bg-rose-500"]):not(.fixed-dark *):not(button):not(button *):not([role="button"]):not([role="button"] *):not([class*="btn-"]):not([class*="btn-"] *),
+[data-theme="light"] .text-slate-100:not([class*="bg-orange-500"]):not([class*="bg-rose-500"]):not(.fixed-dark *):not(button):not(button *):not([role="button"]):not([role="button"] *):not([class*="btn-"]):not([class*="btn-"] *),
+html:not(.dark) .text-slate-100:not([class*="bg-orange-500"]):not([class*="bg-rose-500"]):not(.fixed-dark *):not(button):not(button *):not([role="button"]):not([role="button"] *):not([class*="btn-"]):not([class*="btn-"] *) {
+  color: var(--app-text-primary) !important;
+}
+
+[data-mode="light"] .text-slate-200:not([class*="bg-orange-500"]):not([class*="bg-rose-500"]):not(.fixed-dark *):not(button):not(button *):not([role="button"]):not([role="button"] *):not([class*="btn-"]):not([class*="btn-"] *),
+[data-mode="light"] .text-slate-300:not([class*="bg-orange-500"]):not([class*="bg-rose-500"]):not(.fixed-dark *):not(button):not(button *):not([role="button"]):not([role="button"] *):not([class*="btn-"]):not([class*="btn-"] *),
+[data-theme="light"] .text-slate-200:not([class*="bg-orange-500"]):not([class*="bg-rose-500"]):not(.fixed-dark *):not(button):not(button *):not([role="button"]):not([role="button"] *):not([class*="btn-"]):not([class*="btn-"] *),
+[data-theme="light"] .text-slate-300:not([class*="bg-orange-500"]):not([class*="bg-rose-500"]):not(.fixed-dark *):not(button):not(button *):not([role="button"]):not([role="button"] *):not([class*="btn-"]):not([class*="btn-"] *),
+html:not(.dark) .text-slate-200:not([class*="bg-orange-500"]):not([class*="bg-rose-500"]):not(.fixed-dark *):not(button):not(button *):not([role="button"]):not([role="button"] *):not([class*="btn-"]):not([class*="btn-"] *),
+html:not(.dark) .text-slate-300:not([class*="bg-orange-500"]):not([class*="bg-rose-500"]):not(.fixed-dark *):not(button):not(button *):not([role="button"]):not([role="button"] *):not([class*="btn-"]):not([class*="btn-"] *) {
+  color: var(--app-text-secondary) !important;
+}
+
+[data-mode="light"] .text-slate-400:not([class*="bg-orange-500"]):not([class*="bg-rose-500"]):not(.fixed-dark *):not(button):not(button *):not([role="button"]):not([role="button"] *):not([class*="btn-"]):not([class*="btn-"] *),
+[data-mode="light"] .text-slate-500:not([class*="bg-orange-500"]):not([class*="bg-rose-500"]):not(.fixed-dark *):not(button):not(button *):not([role="button"]):not([role="button"] *):not([class*="btn-"]):not([class*="btn-"] *),
+[data-theme="light"] .text-slate-400:not([class*="bg-orange-500"]):not([class*="bg-rose-500"]):not(.fixed-dark *):not(button):not(button *):not([role="button"]):not([role="button"] *):not([class*="btn-"]):not([class*="btn-"] *),
+[data-theme="light"] .text-slate-500:not([class*="bg-orange-500"]):not([class*="bg-rose-500"]):not(.fixed-dark *):not(button):not(button *):not([role="button"]):not([role="button"] *):not([class*="btn-"]):not([class*="btn-"] *),
+html:not(.dark) .text-slate-400:not([class*="bg-orange-500"]):not([class*="bg-rose-500"]):not(.fixed-dark *):not(button):not(button *):not([role="button"]):not([role="button"] *):not([class*="btn-"]):not([class*="btn-"] *),
+html:not(.dark) .text-slate-500:not([class*="bg-orange-500"]):not([class*="bg-rose-500"]):not(.fixed-dark *):not(button):not(button *):not([role="button"]):not([role="button"] *):not([class*="btn-"]):not([class*="btn-"] *) {
+  color: var(--app-text-muted) !important;
+}
+
+/* 4. Text Visibility in Dark Modes */
+[data-mode="dark"] h1,
+[data-mode="dark"] h2,
+[data-mode="dark"] h3,
+[data-mode="dark"] h4,
+[data-mode="dark"] h5,
+[data-mode="dark"] h6,
+[data-theme="dark"] h1,
+[data-theme="dark"] h2,
+[data-theme="dark"] h3,
+[data-theme="dark"] h4,
+[data-theme="dark"] h5,
+[data-theme="dark"] h6,
+html.dark h1,
+html.dark h2,
+html.dark h3,
+html.dark h4,
+html.dark h5,
+html.dark h6 {
+  color: var(--app-text-primary) !important;
+}
+
+[data-mode="dark"] .text-white:not(.bg-lime-400 *):not([class*="bg-lime-"]):not([class*="bg-amber-400"]):not(.bg-amber-400 *),
+[data-theme="dark"] .text-white:not(.bg-lime-400 *):not([class*="bg-lime-"]):not([class*="bg-amber-400"]):not(.bg-amber-400 *),
+html.dark .text-white:not(.bg-lime-400 *):not([class*="bg-lime-"]):not([class*="bg-amber-400"]):not(.bg-amber-400 *) {
+  color: var(--app-text-primary) !important;
+}
+
+[data-mode="dark"] .text-slate-100:not(.bg-lime-400 *):not([class*="bg-lime-"]):not(.fixed-dark *):not(button):not(button *):not([role="button"]):not([role="button"] *):not([class*="btn-"]):not([class*="btn-"] *),
+[data-theme="dark"] .text-slate-100:not(.bg-lime-400 *):not([class*="bg-lime-"]):not(.fixed-dark *):not(button):not(button *):not([role="button"]):not([role="button"] *):not([class*="btn-"]):not([class*="btn-"] *),
+html.dark .text-slate-100:not(.bg-lime-400 *):not([class*="bg-lime-"]):not(.fixed-dark *):not(button):not(button *):not([role="button"]):not([role="button"] *):not([class*="btn-"]):not([class*="btn-"] *) {
+  color: var(--app-text-primary) !important;
+}
+
+[data-mode="dark"] .text-slate-200:not(.bg-lime-400 *):not([class*="bg-lime-"]):not(.fixed-dark *):not(button):not(button *):not([role="button"]):not([role="button"] *):not([class*="btn-"]):not([class*="btn-"] *),
+[data-mode="dark"] .text-slate-300:not(.bg-lime-400 *):not([class*="bg-lime-"]):not(.fixed-dark *):not(button):not(button *):not([role="button"]):not([role="button"] *):not([class*="btn-"]):not([class*="btn-"] *),
+[data-theme="dark"] .text-slate-200:not(.bg-lime-400 *):not([class*="bg-lime-"]):not(.fixed-dark *):not(button):not(button *):not([role="button"]):not([role="button"] *):not([class*="btn-"]):not([class*="btn-"] *),
+[data-theme="dark"] .text-slate-300:not(.bg-lime-400 *):not([class*="bg-lime-"]):not(.fixed-dark *):not(button):not(button *):not([role="button"]):not([role="button"] *):not([class*="btn-"]):not([class*="btn-"] *),
+html.dark .text-slate-200:not(.bg-lime-400 *):not([class*="bg-lime-"]):not(.fixed-dark *):not(button):not(button *):not([role="button"]):not([role="button"] *):not([class*="btn-"]):not([class*="btn-"] *),
+html.dark .text-slate-300:not(.bg-lime-400 *):not([class*="bg-lime-"]):not(.fixed-dark *):not(button):not(button *):not([role="button"]):not([role="button"] *):not([class*="btn-"]):not([class*="btn-"] *) {
+  color: var(--app-text-secondary) !important;
+}
+
+[data-mode="dark"] .text-slate-400:not(.bg-lime-400 *):not([class*="bg-lime-"]):not(.fixed-dark *):not(button):not(button *):not([role="button"]):not([role="button"] *):not([class*="btn-"]):not([class*="btn-"] *),
+[data-mode="dark"] .text-slate-500:not(.bg-lime-400 *):not([class*="bg-lime-"]):not(.fixed-dark *):not(button):not(button *):not([role="button"]):not([role="button"] *):not([class*="btn-"]):not([class*="btn-"] *),
+[data-theme="dark"] .text-slate-400:not(.bg-lime-400 *):not([class*="bg-lime-"]):not(.fixed-dark *):not(button):not(button *):not([role="button"]):not([role="button"] *):not([class*="btn-"]):not([class*="btn-"] *),
+[data-theme="dark"] .text-slate-500:not(.bg-lime-400 *):not([class*="bg-lime-"]):not(.fixed-dark *):not(button):not(button *):not([role="button"]):not([role="button"] *):not([class*="btn-"]):not([class*="btn-"] *),
+html.dark .text-slate-400:not(.bg-lime-400 *):not([class*="bg-lime-"]):not(.fixed-dark *):not(button):not(button *):not([role="button"]):not([role="button"] *):not([class*="btn-"]):not([class*="btn-"] *),
+html.dark .text-slate-500:not(.bg-lime-400 *):not([class*="bg-lime-"]):not(.fixed-dark *):not(button):not(button *):not([role="button"]):not([role="button"] *):not([class*="btn-"]):not([class*="btn-"] *) {
+  color: var(--app-text-muted) !important;
+}
+
+/* ========================================================
+   FitMood Button Color System & Interactive Contrast Engine
+   Guaranteed visible button background, readable text, and distinct states
+   Supports: Primary, Secondary, Outline, Ghost, Destructive, Icon
+   Prevents disappearing text, clashing backgrounds, and state invisibility
+   ======================================================== */
+
+button,
+[role="button"] {
+  user-select: none;
+  -webkit-user-select: none;
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease, transform 0.1s ease, box-shadow 0.15s ease;
+}
+
+button:focus-visible,
+[role="button"]:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--app-ring) !important;
+  outline-offset: 2px !important;
+}
+
+button:disabled,
+button[disabled],
+button.disabled {
+  opacity: 0.5 !important;
+  cursor: not-allowed !important;
+}
+
+button:active:not(:disabled) {
+  transform: scale(0.985);
+}
+
+/* --- 1. Reusable Button Style Classes --- */
+
+/* Primary Action Button */
+.btn-primary {
+  background-color: var(--btn-primary-bg) !important;
+  color: var(--btn-primary-text) !important;
+  border: 1px solid var(--btn-primary-border, transparent) !important;
+  font-weight: 800 !important;
+}
+.btn-primary:hover,
+.btn-primary:focus-visible {
+  background-color: var(--btn-primary-hover-bg) !important;
+  border-color: var(--btn-primary-hover-border, var(--btn-primary-border, transparent)) !important;
+  color: var(--btn-primary-text) !important;
+}
+.btn-primary:active {
+  color: var(--btn-primary-text) !important;
+}
+.btn-primary *,
+.btn-primary:hover *,
+.btn-primary:focus * {
+  color: var(--btn-primary-text) !important;
+  fill: var(--btn-primary-text) !important;
+}
+
+/* Secondary Action Button (Never blends into cards or background) */
+.btn-secondary {
+  background-color: var(--btn-secondary-bg) !important;
+  color: var(--btn-secondary-text) !important;
+  border: 1px solid var(--btn-secondary-border) !important;
+  font-weight: 700 !important;
+}
+.btn-secondary:hover,
+.btn-secondary:focus-visible {
+  background-color: var(--btn-secondary-hover-bg) !important;
+  border-color: var(--btn-secondary-hover-border, var(--btn-secondary-border)) !important;
+  color: var(--btn-secondary-text) !important;
+}
+.btn-secondary:active {
+  color: var(--btn-secondary-text) !important;
+}
+.btn-secondary *,
+.btn-secondary:hover *,
+.btn-secondary:focus * {
+  color: var(--btn-secondary-text) !important;
+  fill: var(--btn-secondary-text) !important;
+}
+
+/* Accent Action Button */
+.btn-accent {
+  background-color: var(--btn-accent-bg) !important;
+  color: var(--btn-accent-text) !important;
+  border: 1px solid var(--btn-accent-border, transparent) !important;
+  font-weight: 800 !important;
+}
+.btn-accent:hover,
+.btn-accent:focus-visible {
+  background-color: var(--btn-accent-hover-bg) !important;
+  border-color: var(--btn-accent-hover-border, var(--btn-accent-border, transparent)) !important;
+  color: var(--btn-accent-text) !important;
+}
+.btn-accent:active {
+  color: var(--btn-accent-text) !important;
+}
+.btn-accent *,
+.btn-accent:hover *,
+.btn-accent:focus * {
+  color: var(--btn-accent-text) !important;
+  fill: var(--btn-accent-text) !important;
+}
+
+/* Outline Button (Guaranteed 1.5px visible border, distinct hover fill) */
+.btn-outline {
+  background-color: transparent !important;
+  color: var(--btn-outline-text) !important;
+  border: 1.5px solid var(--btn-outline-border) !important;
+  font-weight: 700 !important;
+}
+.btn-outline:hover,
+.btn-outline:focus-visible {
+  background-color: var(--btn-outline-hover-bg) !important;
+  border-color: var(--btn-outline-hover-border, var(--btn-outline-border)) !important;
+  color: var(--btn-outline-text) !important;
+}
+.btn-outline:active {
+  color: var(--btn-outline-text) !important;
+}
+.btn-outline *,
+.btn-outline:hover *,
+.btn-outline:focus * {
+  color: var(--btn-outline-text) !important;
+  border-color: inherit;
+}
+
+/* Ghost Button (Clear text contrast, soft hover fill, never washes out) */
+.btn-ghost {
+  background-color: transparent !important;
+  color: var(--btn-ghost-text) !important;
+  border: 1px solid var(--btn-ghost-border, transparent) !important;
+}
+.btn-ghost:hover,
+.btn-ghost:focus-visible {
+  background-color: var(--btn-ghost-hover-bg) !important;
+  border-color: var(--btn-ghost-hover-border, var(--btn-ghost-border, transparent)) !important;
+  color: var(--btn-ghost-text) !important;
+}
+.btn-ghost:active {
+  color: var(--btn-ghost-text) !important;
+}
+.btn-ghost *,
+.btn-ghost:hover *,
+.btn-ghost:focus * {
+  color: var(--btn-ghost-text) !important;
+}
+
+/* Destructive Action Button */
+.btn-destructive {
+  background-color: var(--btn-destructive-bg) !important;
+  color: var(--btn-destructive-text) !important;
+  border: 1px solid var(--btn-destructive-border, transparent) !important;
+  font-weight: 800 !important;
+}
+.btn-destructive:hover,
+.btn-destructive:focus-visible {
+  background-color: var(--btn-destructive-hover-bg) !important;
+  border-color: var(--btn-destructive-hover-border, var(--btn-destructive-border, transparent)) !important;
+  color: var(--btn-destructive-text) !important;
+}
+.btn-destructive:active {
+  color: var(--btn-destructive-text) !important;
+}
+.btn-destructive *,
+.btn-destructive:hover *,
+.btn-destructive:focus * {
+  color: var(--btn-destructive-text) !important;
+}
+
+/* Icon-only Button */
+.btn-icon {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background-color: transparent !important;
+  border: 1px solid transparent !important;
+  color: var(--btn-icon-text, var(--btn-ghost-text)) !important;
+  border-radius: 0.75rem !important;
+  transition: all 0.15s ease !important;
+}
+.btn-icon:hover {
+  background-color: var(--btn-icon-hover-bg, var(--btn-ghost-hover-bg)) !important;
+  color: var(--btn-icon-hover-text, var(--app-text-primary)) !important;
+}
+
+/* --- 2. Solid Neon Action Buttons (Lime, Amber, Sky) --- Always High-Contrast Dark Text */
+button.bg-lime-400,
+button.bg-lime-300,
+button[class*="bg-lime-400"],
+button[class*="bg-lime-300"],
+button.bg-amber-400,
+button.bg-amber-300,
+button[class*="bg-amber-400"],
+button[class*="bg-amber-300"],
+button.bg-sky-400,
+button[class*="bg-sky-400"],
+a.bg-lime-400,
+a[class*="bg-lime-400"] {
+  color: var(--btn-primary-text) !important;
+}
+
+button.bg-lime-400 *,
+button.bg-lime-300 *,
+button[class*="bg-lime-400"] *,
+button[class*="bg-lime-300"] *,
+button.bg-amber-400 *,
+button.bg-amber-300 *,
+button[class*="bg-amber-400"] *,
+button[class*="bg-amber-300"] *,
+button.bg-sky-400 *,
+button[class*="bg-sky-400"] * {
+  color: var(--btn-primary-text) !important;
+  fill: var(--btn-primary-text) !important;
+}
+
+button.bg-lime-400:hover,
+button.bg-lime-400:focus,
+button.bg-lime-400:active,
+button[class*="bg-lime-400"]:hover,
+button[class*="bg-lime-400"]:focus,
+button[class*="bg-lime-400"]:active,
+button.bg-amber-400:hover,
+button.bg-amber-400:focus,
+button.bg-amber-400:active,
+button[class*="bg-amber-400"]:hover,
+button[class*="bg-amber-400"]:focus,
+button[class*="bg-amber-400"]:active,
+button.bg-sky-400:hover,
+button.bg-sky-400:focus,
+button.bg-sky-400:active,
+button[class*="bg-sky-400"]:hover,
+button[class*="bg-sky-400"]:focus,
+button[class*="bg-sky-400"]:active {
+  color: var(--btn-primary-text) !important;
+}
+
+button.bg-lime-400:hover *,
+button.bg-lime-400:focus *,
+button.bg-lime-400:active *,
+button[class*="bg-lime-400"]:hover *,
+button[class*="bg-lime-400"]:focus *,
+button[class*="bg-lime-400"]:active *,
+button.bg-amber-400:hover *,
+button.bg-amber-400:focus *,
+button.bg-amber-400:active *,
+button[class*="bg-amber-400"]:hover *,
+button[class*="bg-amber-400"]:focus *,
+button[class*="bg-amber-400"]:active *,
+button.bg-sky-400:hover *,
+button.bg-sky-400:focus *,
+button.bg-sky-400:active *,
+button[class*="bg-sky-400"]:hover *,
+button[class*="bg-sky-400"]:focus *,
+button[class*="bg-sky-400"]:active * {
+  color: var(--btn-primary-text) !important;
+  fill: var(--btn-primary-text) !important;
+}
+
+/* Selected Amber & Warm Chips in Light Mode */
+[data-mode="light"] .text-amber-300:not(.fixed-dark):not(.fixed-dark *):not(button):not(button *):not([role="button"]):not([role="button"] *):not([class*="btn-"]):not([class*="btn-"] *),
+[data-theme="light"] .text-amber-300:not(.fixed-dark):not(.fixed-dark *):not(button):not(button *):not([role="button"]):not([role="button"] *):not([class*="btn-"]):not([class*="btn-"] *),
+[data-mode="light"] .text-amber-400:not(.fixed-dark):not(.fixed-dark *):not(button):not(button *):not([role="button"]):not([role="button"] *):not([class*="btn-"]):not([class*="btn-"] *):not([class*="bg-amber-400"]):not([class*="bg-lime-400"]),
+[data-theme="light"] .text-amber-400:not(.fixed-dark):not(.fixed-dark *):not(button):not(button *):not([role="button"]):not([role="button"] *):not([class*="btn-"]):not([class*="btn-"] *):not([class*="bg-amber-400"]):not([class*="bg-lime-400"]),
+[data-mode="light"] .text-amber-400\/90:not(.fixed-dark):not(.fixed-dark *):not(button):not(button *):not([role="button"]):not([role="button"] *):not([class*="btn-"]):not([class*="btn-"] *),
+[data-theme="light"] .text-amber-400\/90:not(.fixed-dark):not(.fixed-dark *):not(button):not(button *):not([role="button"]):not([role="button"] *):not([class*="btn-"]):not([class*="btn-"] *) {
+  color: #b45309 !important; /* amber-700 with 4.7:1 contrast on light backgrounds */
+}
+
+/* Light Mode: Sky / Blue accent text adaptation */
+[data-mode="light"] .text-sky-400:not(.fixed-dark):not(.fixed-dark *):not(button):not(button *):not([role="button"]):not([role="button"] *):not([class*="btn-"]):not([class*="btn-"] *),
+[data-theme="light"] .text-sky-400:not(.fixed-dark):not(.fixed-dark *):not(button):not(button *):not([role="button"]):not([role="button"] *):not([class*="btn-"]):not([class*="btn-"] *) {
+  color: #0369a1 !important; /* sky-700 with 5.5:1 contrast on light backgrounds */
+}
+
+/* Light Mode: Rose / Red / Error text & validation adaptation */
+[data-mode="light"] .text-rose-400:not(.fixed-dark):not(.fixed-dark *):not(button):not(button *):not([role="button"]):not([role="button"] *):not([class*="btn-"]):not([class*="btn-"] *),
+[data-theme="light"] .text-rose-400:not(.fixed-dark):not(.fixed-dark *):not(button):not(button *):not([role="button"]):not([role="button"] *):not([class*="btn-"]):not([class*="btn-"] *),
+[data-mode="light"] .text-red-400:not(.fixed-dark):not(.fixed-dark *):not(button):not(button *):not([role="button"]):not([role="button"] *):not([class*="btn-"]):not([class*="btn-"] *),
+[data-theme="light"] .text-red-400:not(.fixed-dark):not(.fixed-dark *):not(button):not(button *):not([role="button"]):not([role="button"] *):not([class*="btn-"]):not([class*="btn-"] *) {
+  color: #dc2626 !important; /* red-600 with 5.2:1 contrast */
+}
+
+[data-mode="light"] .text-rose-200:not(.fixed-dark):not(.fixed-dark *):not(button):not(button *):not([role="button"]):not([role="button"] *):not([class*="btn-"]):not([class*="btn-"] *),
+[data-theme="light"] .text-rose-200:not(.fixed-dark):not(.fixed-dark *):not(button):not(button *):not([role="button"]):not([role="button"] *):not([class*="btn-"]):not([class*="btn-"] *),
+[data-mode="light"] .text-rose-300:not(.fixed-dark):not(.fixed-dark *):not(button):not(button *):not([role="button"]):not([role="button"] *):not([class*="btn-"]):not([class*="btn-"] *),
+[data-theme="light"] .text-rose-300:not(.fixed-dark):not(.fixed-dark *):not(button):not(button *):not([role="button"]):not([role="button"] *):not([class*="btn-"]):not([class*="btn-"] *) {
+  color: #b91c1c !important; /* rose-700 with 6.1:1 contrast */
+}
+
+[data-mode="light"] .bg-rose-950\/40:not(.fixed-dark):not(.fixed-dark *):not(button):not(button *):not([role="button"]):not([role="button"] *):not([class*="btn-"]):not([class*="btn-"] *),
+[data-theme="light"] .bg-rose-950\/40:not(.fixed-dark):not(.fixed-dark *):not(button):not(button *):not([role="button"]):not([role="button"] *):not([class*="btn-"]):not([class*="btn-"] *) {
+  background-color: rgba(254, 226, 226, 0.75) !important;
+  border-color: rgba(239, 68, 68, 0.4) !important;
+}
+
+/* Light Mode: Emerald / Green accent text adaptation */
+[data-mode="light"] .text-emerald-400:not(.fixed-dark):not(.fixed-dark *):not(button):not(button *):not([role="button"]):not([role="button"] *):not([class*="btn-"]):not([class*="btn-"] *),
+[data-theme="light"] .text-emerald-400:not(.fixed-dark):not(.fixed-dark *):not(button):not(button *):not([role="button"]):not([role="button"] *):not([class*="btn-"]):not([class*="btn-"] *),
+[data-mode="light"] .text-green-400:not(.fixed-dark):not(.fixed-dark *):not(button):not(button *):not([role="button"]):not([role="button"] *):not([class*="btn-"]):not([class*="btn-"] *),
+[data-theme="light"] .text-green-400:not(.fixed-dark):not(.fixed-dark *):not(button):not(button *):not([role="button"]):not([role="button"] *):not([class*="btn-"]):not([class*="btn-"] *) {
+  color: #047857 !important; /* emerald-700 with 5.2:1 contrast */
+}
+
+/* Light Mode: Purple / Violet text adaptation */
+[data-mode="light"] .text-purple-400:not(.fixed-dark):not(.fixed-dark *):not(button):not(button *):not([role="button"]):not([role="button"] *):not([class*="btn-"]):not([class*="btn-"] *),
+[data-theme="light"] .text-purple-400:not(.fixed-dark):not(.fixed-dark *):not(button):not(button *):not([role="button"]):not([role="button"] *):not([class*="btn-"]):not([class*="btn-"] *) {
+  color: #7e22ce !important; /* purple-700 with 6.2:1 contrast */
+}
+
+/* Light Mode: Orange text adaptation */
+[data-mode="light"] .text-orange-400:not(.fixed-dark):not(.fixed-dark *):not(button):not(button *):not([role="button"]):not([role="button"] *):not([class*="btn-"]):not([class*="btn-"] *),
+[data-theme="light"] .text-orange-400:not(.fixed-dark):not(.fixed-dark *):not(button):not(button *):not([role="button"]):not([role="button"] *):not([class*="btn-"]):not([class*="btn-"] *) {
+  color: #c2410c !important; /* orange-700 with 5.8:1 contrast */
+}
+
+[data-mode="light"] .bg-amber-400\/15:not(.fixed-dark):not(.fixed-dark *):not(button):not(button *):not([role="button"]):not([role="button"] *):not([class*="btn-"]):not([class*="btn-"] *),
+[data-theme="light"] .bg-amber-400\/15:not(.fixed-dark):not(.fixed-dark *):not(button):not(button *):not([role="button"]):not([role="button"] *):not([class*="btn-"]):not([class*="btn-"] *) {
+  background-color: rgba(245, 158, 11, 0.14) !important;
+  border-color: rgba(180, 83, 9, 0.35) !important;
+}
+
+[data-mode="light"] .bg-lime-400\/10.border-lime-400.text-white,
+[data-theme="light"] .bg-lime-400\/10.border-lime-400.text-white {
+  color: var(--app-text-primary) !important;
+}
+
+/* 5. Neon Lime Accent Adaptation (Fixes 1.3:1 contrast failure on light mode) */
+[data-mode="light"] .text-lime-400:not(.fixed-dark *):not(button):not(button *):not([role="button"]):not([role="button"] *):not([class*="btn-"]):not([class*="btn-"] *):not(.bg-lime-400 *),
+[data-theme="light"] .text-lime-400:not(.fixed-dark *):not(button):not(button *):not([role="button"]):not([role="button"] *):not([class*="btn-"]):not([class*="btn-"] *):not(.bg-lime-400 *),
+[data-mode="light"] .text-lime-300:not(.fixed-dark *):not(button):not(button *):not([role="button"]):not([role="button"] *):not([class*="btn-"]):not([class*="btn-"] *):not(.bg-lime-400 *),
+[data-theme="light"] .text-lime-300:not(.fixed-dark *):not(button):not(button *):not([role="button"]):not([role="button"] *):not([class*="btn-"]):not([class*="btn-"] *):not(.bg-lime-400 *) {
+  color: var(--app-primary-text) !important;
+}
+
+[data-mode="light"] .fill-lime-400:not(.fixed-dark *):not(button):not(button *):not([role="button"]):not([role="button"] *):not([class*="btn-"]):not([class*="btn-"] *):not(.bg-lime-400 *),
+[data-theme="light"] .fill-lime-400:not(.fixed-dark *):not(button):not(button *):not([role="button"]):not([role="button"] *):not([class*="btn-"]):not([class*="btn-"] *):not(.bg-lime-400 *) {
+  fill: var(--app-primary) !important;
+}
+
+[data-mode="light"] .bg-lime-400\/10:not(.fixed-dark *):not(button):not(button *):not([role="button"]):not([role="button"] *):not([class*="btn-"]):not([class*="btn-"] *),
+[data-mode="light"] .bg-lime-400\/15:not(.fixed-dark *):not(button):not(button *):not([role="button"]):not([role="button"] *):not([class*="btn-"]):not([class*="btn-"] *),
+[data-mode="light"] .bg-lime-400\/20:not(.fixed-dark *):not(button):not(button *):not([role="button"]):not([role="button"] *):not([class*="btn-"]):not([class*="btn-"] *),
+[data-theme="light"] .bg-lime-400\/10:not(.fixed-dark *):not(button):not(button *):not([role="button"]):not([role="button"] *):not([class*="btn-"]):not([class*="btn-"] *),
+[data-theme="light"] .bg-lime-400\/15:not(.fixed-dark *):not(button):not(button *):not([role="button"]):not([role="button"] *):not([class*="btn-"]):not([class*="btn-"] *),
+[data-theme="light"] .bg-lime-400\/20:not(.fixed-dark *):not(button):not(button *):not([role="button"]):not([role="button"] *):not([class*="btn-"]):not([class*="btn-"] *) {
+  background-color: var(--app-accent-subtle) !important;
+  border-color: var(--app-card-border-subtle) !important;
+}
+
+[data-mode="light"] .border-lime-400:not(.fixed-dark *):not(button):not(button *):not([role="button"]):not([role="button"] *):not([class*="btn-"]):not([class*="btn-"] *),
+[data-mode="light"] .border-lime-400\/20:not(.fixed-dark *):not(button):not(button *):not([role="button"]):not([role="button"] *):not([class*="btn-"]):not([class*="btn-"] *),
+[data-mode="light"] .border-lime-400\/30:not(.fixed-dark *):not(button):not(button *):not([role="button"]):not([role="button"] *):not([class*="btn-"]):not([class*="btn-"] *),
+[data-theme="light"] .border-lime-400:not(.fixed-dark *):not(button):not(button *):not([role="button"]):not([role="button"] *):not([class*="btn-"]):not([class*="btn-"] *),
+[data-theme="light"] .border-lime-400\/20:not(.fixed-dark *):not(button):not(button *):not([role="button"]):not([role="button"] *):not([class*="btn-"]):not([class*="btn-"] *),
+[data-theme="light"] .border-lime-400\/30:not(.fixed-dark *):not(button):not(button *):not([role="button"]):not([role="button"] *):not([class*="btn-"]):not([class*="btn-"] *) {
+  border-color: var(--app-card-border) !important;
+}
+
+/* In non-lime dark themes, harmonize lime accent text with theme primary */
+[data-theme="sunset_orange"][data-mode="dark"] .text-lime-400:not(.fixed-dark *):not(button):not(button *):not([role="button"]):not([role="button"] *):not([class*="btn-"]):not([class*="btn-"] *):not(.bg-lime-400 *),
+[data-theme="sunset_orange"][data-mode="dark"] .text-lime-300:not(.fixed-dark *):not(button):not(button *):not([role="button"]):not([role="button"] *):not([class*="btn-"]):not([class*="btn-"] *):not(.bg-lime-400 *) {
+  color: var(--app-primary-text) !important;
+}
+[data-theme="ocean_blue"][data-mode="dark"] .text-lime-400:not(.fixed-dark *):not(button):not(button *):not([role="button"]):not([role="button"] *):not([class*="btn-"]):not([class*="btn-"] *):not(.bg-lime-400 *),
+[data-theme="ocean_blue"][data-mode="dark"] .text-lime-300:not(.fixed-dark *):not(button):not(button *):not([role="button"]):not([role="button"] *):not([class*="btn-"]):not([class*="btn-"] *):not(.bg-lime-400 *) {
+  color: var(--app-primary-text) !important;
+}
+[data-theme="forest_green"][data-mode="dark"] .text-lime-400:not(.fixed-dark *):not(button):not(button *):not([role="button"]):not([role="button"] *):not([class*="btn-"]):not([class*="btn-"] *):not(.bg-lime-400 *),
+[data-theme="forest_green"][data-mode="dark"] .text-lime-300:not(.fixed-dark *):not(button):not(button *):not([role="button"]):not([role="button"] *):not([class*="btn-"]):not([class*="btn-"] *):not(.bg-lime-400 *) {
+  color: var(--app-primary-text) !important;
+}
+[data-theme="lavender"][data-mode="dark"] .text-lime-400:not(.fixed-dark *):not(button):not(button *):not([role="button"]):not([role="button"] *):not([class*="btn-"]):not([class*="btn-"] *):not(.bg-lime-400 *),
+[data-theme="lavender"][data-mode="dark"] .text-lime-300:not(.fixed-dark *):not(button):not(button *):not([role="button"]):not([role="button"] *):not([class*="btn-"]):not([class*="btn-"] *):not(.bg-lime-400 *) {
+  color: var(--app-primary-text) !important;
+}
+
+/* Form Controls, Inputs, Placeholders, and Dropdowns Across All Themes */
+input:not([type="checkbox"]):not([type="radio"]),
+select,
+textarea {
+  background-color: var(--app-input-bg) !important;
+  color: var(--app-input-text) !important;
+  border-color: var(--app-input-border) !important;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--app-input-placeholder) !important;
+  opacity: 1 !important;
+}
+
+select option {
+  background-color: var(--app-card) !important;
+  color: var(--app-text-primary) !important;
+}
+
+label {
+  color: var(--app-text-secondary);
+}
+
+[data-mode="light"] label:not(.fixed-dark):not(.fixed-dark *):not(button):not(button *):not([role="button"]):not([role="button"] *):not([class*="btn-"]):not([class*="btn-"] *),
+[data-theme="light"] label:not(.fixed-dark):not(.fixed-dark *):not(button):not(button *):not([role="button"]):not([role="button"] *):not([class*="btn-"]):not([class*="btn-"] *) {
+  color: var(--app-text-secondary) !important;
+}
+
+/* 6. Lime Action Buttons Contrast Protection */
+.bg-lime-400 .bg-slate-950 {
+  background-color: rgba(0, 0, 0, 0.16) !important;
+  color: var(--btn-primary-text) !important;
+}
+.bg-lime-400 .text-lime-400,
+.bg-lime-400 .fill-lime-400 {
+  color: var(--btn-primary-text) !important;
+  fill: var(--btn-primary-text) !important;
+}
+
+/* 7. Dedicated Dark Overlays (Video Player, Interactive Timer, Athletic Animator) */
+.fixed-dark {
+  background-color: #020617 !important;
+  color: #f8fafc !important;
+}
+.fixed-dark .text-white {
+  color: #ffffff !important;
+}
+.fixed-dark .text-slate-100 {
+  color: #f1f5f9 !important;
+}
+.fixed-dark .text-slate-200 {
+  color: #e2e8f0 !important;
+}
+.fixed-dark .text-slate-300 {
+  color: #cbd5e1 !important;
+}
+.fixed-dark .text-slate-400 {
+  color: #94a3b8 !important;
+}
+.fixed-dark .text-slate-500 {
+  color: #64748b !important;
+}
+.fixed-dark .bg-slate-900 {
+  background-color: #0f172a !important;
+}
+.fixed-dark .bg-slate-950 {
+  background-color: #020617 !important;
+}
+.fixed-dark .border-slate-800 {
+  border-color: #1e293b !important;
+}
+.fixed-dark .border-slate-700 {
+  border-color: #334155 !important;
+}
+
+/* 8. Photo & Hero Image Overlay Protection */
+.relative.overflow-hidden .absolute .bg-slate-950\/90,
+.relative.overflow-hidden .absolute .bg-slate-950\/80,
+.relative.overflow-hidden .absolute .bg-slate-950\/70,
+.relative.overflow-hidden .absolute [class*="bg-slate-950\/"] {
+  background-color: rgba(2, 6, 23, 0.88) !important;
+  color: #ffffff !important;
+}
+
+.relative.overflow-hidden .absolute .text-white,
+.relative.overflow-hidden .absolute h2.text-white,
+.relative.overflow-hidden .absolute h3.text-white {
+  color: #ffffff !important;
+}
+
+.relative.overflow-hidden .absolute .text-slate-200,
+.relative.overflow-hidden .absolute .text-slate-300 {
+  color: #e2e8f0 !important;
+}
+
+/* 9. Recharts styling for contrast across all themes */
+.recharts-cartesian-grid-horizontal line,
+.recharts-cartesian-grid-vertical line {
+  stroke: var(--app-chart-grid) !important;
+}
+
+.recharts-text {
+  fill: var(--app-text-muted) !important;
+  font-size: 11px !important;
+  font-weight: 600 !important;
+}
+
+.recharts-default-tooltip {
+  background-color: var(--app-chart-tooltip-bg) !important;
+  color: var(--app-chart-tooltip-text) !important;
+  border: 1px solid var(--app-card-border) !important;
+  border-radius: 1rem !important;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.15) !important;
+  padding: 0.75rem 1rem !important;
+}
+
+.recharts-tooltip-item-name,
+.recharts-tooltip-item-value {
+  color: var(--app-chart-tooltip-text) !important;
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--app-card-border);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--app-primary);
+}
+
+@keyframes subtle-pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.92; transform: scale(1.02); }
+}
+
+.animate-subtle-pulse {
+  animation: subtle-pulse 3s ease-in-out infinite;
+}

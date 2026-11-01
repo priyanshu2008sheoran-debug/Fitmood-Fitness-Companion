@@ -1,0 +1,143 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Default deny all
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function isOwner(userId) {
+      return isSignedIn() && request.auth.uid == userId;
+    }
+
+    function isValidId(id) {
+      return id is string && id.size() > 0 && id.size() <= 128 && id.matches('^[a-zA-Z0-9_\\-]+$');
+    }
+
+    // User profile validation
+    function isValidUserProfile(data, userId) {
+      return data.id is string && data.id == userId
+        && data.name is string && data.name.size() > 0 && data.name.size() <= 80
+        && (data.age == null || (data.age is number && data.age >= 10 && data.age <= 120))
+        && (data.heightCm == null || (data.heightCm is number && data.heightCm >= 50 && data.heightCm <= 300))
+        && (data.weightKg == null || (data.weightKg is number && data.weightKg >= 20 && data.weightKg <= 400))
+        && (data.xp == null || (data.xp is number && data.xp >= 0))
+        && (data.level == null || (data.level is number && data.level >= 1))
+        && (data.streakDays == null || (data.streakDays is number && data.streakDays >= 0));
+    }
+
+    // Mood checkin validation
+    function isValidMoodCheckIn(data, userId) {
+      return data.userId is string && data.userId == userId
+        && data.mood is string && data.mood in ['energetic', 'happy', 'normal', 'tired', 'stressed', 'low_motivation']
+        && data.date is string && data.date.size() <= 30
+        && (data.note == null || (data.note is string && data.note.size() <= 500));
+    }
+
+    // Workout log validation
+    function isValidWorkoutLog(data, userId) {
+      return data.userId is string && data.userId == userId
+        && data.planId is string && data.planId.size() <= 100
+        && data.planTitle is string && data.planTitle.size() <= 100
+        && data.durationMinutes is number && data.durationMinutes >= 0 && data.durationMinutes <= 600
+        && (data.xpEarned == null || (data.xpEarned is number && data.xpEarned >= 0));
+    }
+
+    // Food log validation
+    function isValidFoodLog(data, userId) {
+      return data.userId is string && data.userId == userId
+        && data.mealType is string && data.mealType in ['breakfast', 'lunch', 'dinner', 'snack']
+        && data.foodName is string && data.foodName.size() <= 100
+        && data.calories is number && data.calories >= 0 && data.calories <= 10000
+        && data.proteinGrams is number && data.proteinGrams >= 0 && data.proteinGrams <= 500
+        && data.date is string && data.date.size() <= 30;
+    }
+
+    // Measurement validation
+    function isValidMeasurement(data, userId) {
+      return data.userId is string && data.userId == userId
+        && data.weightKg is number && data.weightKg >= 20 && data.weightKg <= 400
+        && data.date is string && data.date.size() <= 30
+        && (data.waistCm == null || (data.waistCm is number && data.waistCm >= 20 && data.waistCm <= 300));
+    }
+
+    // Chat message validation
+    function isValidChatMessage(data, userId) {
+      return data.userId is string && data.userId == userId
+        && data.role is string && (data.role == 'user' || data.role == 'model')
+        && data.text is string && data.text.size() > 0 && data.text.size() <= 10000;
+    }
+
+    // Match rules for users and their subcollections
+    match /users/{userId} {
+      allow get: if isOwner(userId) && isValidId(userId);
+      allow list: if false; // Blanket listing of users is forbidden
+      allow create: if isOwner(userId) && isValidId(userId) && isValidUserProfile(request.resource.data, userId);
+      allow update: if isOwner(userId) && isValidId(userId) && isValidUserProfile(request.resource.data, userId);
+      allow delete: if isOwner(userId) && isValidId(userId);
+
+      // Subcollection: mood_checkins
+      match /mood_checkins/{checkInId} {
+        allow get: if isOwner(userId) && isValidId(checkInId);
+        allow list: if isOwner(userId);
+        allow create: if isOwner(userId) && isValidId(checkInId) && isValidMoodCheckIn(request.resource.data, userId);
+        allow update: if isOwner(userId) && isValidId(checkInId) && isValidMoodCheckIn(request.resource.data, userId);
+        allow delete: if isOwner(userId) && isValidId(checkInId);
+      }
+
+      // Subcollection: workout_logs
+      match /workout_logs/{logId} {
+        allow get: if isOwner(userId) && isValidId(logId);
+        allow list: if isOwner(userId);
+        allow create: if isOwner(userId) && isValidId(logId) && isValidWorkoutLog(request.resource.data, userId);
+        allow update: if isOwner(userId) && isValidId(logId) && isValidWorkoutLog(request.resource.data, userId);
+        allow delete: if isOwner(userId) && isValidId(logId);
+      }
+
+      // Subcollection: food_logs
+      match /food_logs/{logId} {
+        allow get: if isOwner(userId) && isValidId(logId);
+        allow list: if isOwner(userId);
+        allow create: if isOwner(userId) && isValidId(logId) && isValidFoodLog(request.resource.data, userId);
+        allow update: if isOwner(userId) && isValidId(logId) && isValidFoodLog(request.resource.data, userId);
+        allow delete: if isOwner(userId) && isValidId(logId);
+      }
+
+      // Subcollection: measurements
+      match /measurements/{measurementId} {
+        allow get: if isOwner(userId) && isValidId(measurementId);
+        allow list: if isOwner(userId);
+        allow create: if isOwner(userId) && isValidId(measurementId) && isValidMeasurement(request.resource.data, userId);
+        allow update: if isOwner(userId) && isValidId(measurementId) && isValidMeasurement(request.resource.data, userId);
+        allow delete: if isOwner(userId) && isValidId(measurementId);
+      }
+
+      // Subcollection: chat_messages
+      match /chat_messages/{messageId} {
+        allow get, list: if isOwner(userId);
+        allow create, update: if isOwner(userId) && isValidId(messageId) && isValidChatMessage(request.resource.data, userId);
+        allow delete: if isOwner(userId) && isValidId(messageId);
+      }
+    }
+
+    // Validation for leaderboard entries
+    function isValidLeaderboardItem(data, userId) {
+      return data.userId is string && data.userId == userId
+        && data.name is string && data.name.size() > 0 && data.name.size() <= 80
+        && data.xp is number && data.xp >= 0
+        && data.level is number && data.level >= 1;
+    }
+
+    // Social Leaderboard Collection
+    match /leaderboard/{userId} {
+      allow get, list: if true;
+      allow create: if isOwner(userId) && isValidId(userId) && isValidLeaderboardItem(request.resource.data, userId);
+      allow update: if isOwner(userId) && isValidId(userId) && isValidLeaderboardItem(request.resource.data, userId);
+      allow delete: if isOwner(userId) && isValidId(userId);
+    }
+  }
+}
